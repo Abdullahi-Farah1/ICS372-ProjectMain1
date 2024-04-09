@@ -34,8 +34,18 @@ public class Review {
         this.mediaID = mediaID;
     }
 
+    public int getReviewID() {
+        return reviewID;
+    }
+
+    public void setReviewID(int reviewID) {
+        this.reviewID = reviewID;
+    }
+
     private int userID;
     private int starRating;
     private String reviewDescription;
     private int mediaID;
+
+    private int reviewID;
 }
