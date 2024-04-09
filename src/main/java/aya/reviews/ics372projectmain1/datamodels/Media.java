@@ -3,7 +3,7 @@ package aya.reviews.ics372projectmain1.datamodels;
 import aya.reviews.ics372projectmain1.database.AbstractDB;
 import java.util.ArrayList;
 
-abstract class Media extends AbstractDB<Media> {
+abstract class Media{
     private ArrayList<Review> reviews;
     private String name;
     private String description;
@@ -53,15 +53,4 @@ abstract class Media extends AbstractDB<Media> {
     public void setMediaID(int mediaID) {
         this.mediaID = mediaID;
     }
-
-
-    public static String buildPutQuery() {
-        return null;
-    }
-
-    public abstract String buildGetQuery();
-
-    public abstract String buildDeleteQuery();
-    public abstract String buildUpdateQuery();
-
 }

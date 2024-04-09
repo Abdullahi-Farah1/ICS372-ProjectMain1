@@ -1,5 +1,6 @@
 package aya.reviews.ics372projectmain1;
 
+import aya.reviews.ics372projectmain1.database.MovieDB;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,8 +15,9 @@ public class MainApp extends Application {
     private static Stage stg;
     @Override
     public void start(Stage stage) throws IOException {
-        Movie mov = new Movie("a", "a", 1);
-        mov.delete("asd");
+        MovieDB movieDB = new MovieDB();
+        Movie m =  new Movie("a", "a", 2);
+        movieDB.putMovie(m);
 
         //        stg = stage;
 //
