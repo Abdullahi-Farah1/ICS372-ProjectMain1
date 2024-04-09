@@ -1,5 +1,6 @@
-package aya.reviews.ics372projectmain1;
+package aya.reviews.ics372projectmain1.uimodels;
 
+import aya.reviews.ics372projectmain1.MainApp;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
