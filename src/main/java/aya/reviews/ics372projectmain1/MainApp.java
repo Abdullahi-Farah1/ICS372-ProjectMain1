@@ -8,17 +8,22 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+
+import aya.reviews.ics372projectmain1.datamodels.Movie;
 public class MainApp extends Application {
     private static Stage stg;
     @Override
     public void start(Stage stage) throws IOException {
-        stg = stage;
+        Movie mov = new Movie("a", "a", 1);
+        mov.delete("asd");
 
-        Parent root = FXMLLoader.load(getClass().getResource("scene.fxml"));
-        Scene scene = new Scene(root, 600, 400);
-        stage.setTitle("AYA Reviews");
-        stage.setScene(scene);
-        stage.show();
+        //        stg = stage;
+//
+//        Parent root = FXMLLoader.load(getClass().getResource("scene.fxml"));
+//        Scene scene = new Scene(root, 600, 400);
+//        stage.setTitle("AYA Reviews");
+//        stage.setScene(scene);
+//        stage.show();
     }
 
     public void changeScene(String fxml) throws IOException {

@@ -1,9 +1,13 @@
+
 package aya.reviews.ics372projectmain1.datamodels;
-
-
+import aya.reviews.ics372projectmain1.database.AbstractDB;
 import java.util.ArrayList;
 
-abstract class Media {
+abstract class Media extends AbstractDB<Media> {
+    private ArrayList<Review> reviews;
+    private String name;
+    private String description;
+    private int mediaID;
     public Media(String name, String description){
         setName(name);
         setDescription(description);
@@ -50,9 +54,14 @@ abstract class Media {
         this.mediaID = mediaID;
     }
 
-    private ArrayList<Review> reviews;
-    private String name;
-    private String description;
-    private int mediaID;
+
+    public static String buildPutQuery() {
+        return null;
+    }
+
+    public abstract String buildGetQuery();
+
+    public abstract String buildDeleteQuery();
+    public abstract String buildUpdateQuery();
 
 }

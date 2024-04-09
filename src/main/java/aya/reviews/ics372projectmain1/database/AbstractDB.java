@@ -1,16 +1,32 @@
 package aya.reviews.ics372projectmain1.database;
+import aya.reviews.ics372projectmain1.datamodels.Movie
 public abstract class AbstractDB<T> implements DBOperations<T> {
+    /*
+     * This is the template method.
+     * */
+    public static String buildPutQuery() {
+        return null;
+    }
+
+    public abstract String buildGetQuery();
+    public abstract String buildDeleteQuery();
+    public abstract String buildUpdateQuery();
+
     public void put(T item){
-        System.out.println("putting to DB");
+        String query = Movie.buildPutQuery();
+        System.out.println("Putting to DB using query, " + query);
     }
     public T get(String id){
-        System.out.println("getting to DB");
+        String query = this.buildGetQuery();
+        System.out.println("Putting to DB using query, " + query);
         return null;
     }
     public void delete(String id){
-        System.out.println("deleting to DB");
+        String query = this.buildDeleteQuery();
+        System.out.println("Deleting from DB using query, " + query);
     }
     public void update(String id, T newItem){
-        System.out.println("updating to DB");
+        String query = this.buildUpdateQuery();
+        System.out.println("Updating DB using query, " + query);
     }
 }
