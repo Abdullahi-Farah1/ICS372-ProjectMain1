@@ -1,14 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aya.reviews.ics372projectmain1.Movie">
+   <children>
+      <BorderPane prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #002629;">
+         <top>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="414.0" fitWidth="292.0">
+                     <image>
+                        <Image url="@black-panther-web.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="412.0" fitWidth="329.0" layoutX="291.0" layoutY="2.0">
+                     <image>
+                        <Image url="@71eHZFw+GlL._AC_UF1000,1000_QL80_.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="416.0" fitWidth="282.0" layoutX="620.0" layoutY="-2.0">
+                     <image>
+                        <Image url="@6408f676b5811234c887ca62_top%20gun%20maverick-min.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </top>
+         <bottom>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="159.0" layoutY="33.0" prefHeight="120.0" prefWidth="604.0" style="-fx-background-color: #ffc900;" text="Movie Review Page">
+                     <font>
+                        <Font size="69.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="tvshow1" layoutX="802.0" layoutY="153.0" mnemonicParsing="false" onAction="#nextPage" prefHeight="30.0" prefWidth="86.0" style="-fx-background-color: #ffc900;" text="TVShow" />
+               </children>
+            </AnchorPane>
+         </bottom>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="review2" layoutX="383.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleReviewButtonClick" prefHeight="30.0" prefWidth="139.0" text="Review" />
+                  <Button fx:id="rate2" layoutX="383.0" layoutY="43.0" mnemonicParsing="false" onAction="#handleRateButtonClick" prefHeight="30.0" prefWidth="139.0" style="-fx-background-color: #ffc900;" text="Rate" />
+                  <Button fx:id="review3" layoutX="716.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleReviewButtonClick" prefHeight="30.0" prefWidth="139.0" text="Review" />
+                  <Button fx:id="rate3" layoutX="716.0" layoutY="43.0" mnemonicParsing="false" onAction="#handleRateButtonClick" prefHeight="30.0" prefWidth="139.0" style="-fx-background-color: #ffc900;" text="Rate" />
+                  <Button fx:id="review1" layoutX="64.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleReviewButtonClick" prefHeight="30.0" prefWidth="139.0" text="Review" />
+                  <Button fx:id="rate1" layoutX="64.0" layoutY="43.0" mnemonicParsing="false" onAction="#handleRateButtonClick" prefHeight="30.0" prefWidth="139.0" style="-fx-background-color: #ffc900;" text="Rate" />
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
 </AnchorPane>
