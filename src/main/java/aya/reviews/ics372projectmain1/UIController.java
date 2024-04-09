@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Controller {
+public class UIController {
     @FXML
     private Button button;
     @FXML
@@ -27,7 +27,7 @@ public class Controller {
 
     private Map<String, String> registeredUsers; // Map to store registered users
 
-    public Controller() {
+    public UIController() {
         registeredUsers = new HashMap<>();
         // For simplicity, I'm adding a default admin user during initialization
         registeredUsers.put("admin", "password");
