@@ -7,7 +7,7 @@ import java.util.Map;
 
 
 public abstract class TVShowDB extends AbstractDB<TVShow>{
-    private final Map<Integer, TVShow> showMap;
+    private final Map<String, TVShow> showMap;
     public TVShowDB(){
         this.showMap = new HashMap<>();
     }
@@ -16,7 +16,7 @@ public abstract class TVShowDB extends AbstractDB<TVShow>{
         this.showMap.put(show.getMediaID(), show);
         super.put(show);
     }
-    public TVShow getTVShow(Integer mediaID){
+    public TVShow getTVShow(String mediaID){
         TVShow mov = this.showMap.get(mediaID);
         if (mov == null){
             return super.get(mediaID);
@@ -25,12 +25,12 @@ public abstract class TVShowDB extends AbstractDB<TVShow>{
         }
     }
 
-    public void deleteTVShow(Integer mediaID){
+    public void deleteTVShow(String mediaID){
         this.showMap.remove(mediaID);
         super.delete(mediaID);
     }
 
-    public boolean updateTVShow(Integer mediaID, TVShow newTVShow){
+    public boolean updateTVShow(String mediaID, TVShow newTVShow){
         if (this.showMap.containsKey(mediaID)) {
             this.showMap.put(mediaID, newTVShow);
             super.delete(mediaID);

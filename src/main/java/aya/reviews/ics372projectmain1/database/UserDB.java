@@ -7,17 +7,25 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class UserDB extends AbstractDB<User> {
-    private final Map<Integer, User> userMap;
+    private final Map<String, User> userMap;
     public UserDB(){
         this.userMap = new HashMap<>();
     }
 
     public void putUser(User user){
-        this.userMap.put(user.getUserID(), user);
+        this.userMap.put(user.getDisplayName(), user);
         super.put(user);
     }
-
-    public User getUser(Integer userID){
+    public User getUserByName(String username){
+        User user = this.userMap.get(username);
+        if(user == null){
+            return super.get(username);
+        }
+        else{
+            return user;
+        }
+    }
+    public User getUser(String userID){
         User user = this.userMap.get(userID);
         if(user == null){
             return super.get(userID);
@@ -26,12 +34,12 @@ public class UserDB extends AbstractDB<User> {
             return user;
         }
     }
-    public void deleteUser(Integer userID){
-        this.userMap.remove(userID);
-        super.delete(userID);
+    public void deleteUser(String username){
+        this.userMap.remove(username);
+        super.delete(username);
     }
 
-    public boolean updateUser(Integer userID, User newUser){
+    public boolean updateUser(String userID, User newUser){
         if(this.userMap.containsKey(userID)){
             this.userMap.remove(userID);
             this.userMap.put(userID, newUser);

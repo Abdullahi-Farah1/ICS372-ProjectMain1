@@ -34,11 +34,11 @@ public class Review {
         this.mediaID = mediaID;
     }
 
-    public int getReviewID() {
+    public String getReviewID() {
         return reviewID;
     }
 
-    public void setReviewID(int reviewID) {
+    public void setReviewID(String reviewID) {
         this.reviewID = reviewID;
     }
 
@@ -47,5 +47,5 @@ public class Review {
     private String reviewDescription;
     private int mediaID;
 
-    private int reviewID;
+    private String reviewID;
 }

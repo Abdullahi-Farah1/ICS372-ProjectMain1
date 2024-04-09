@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ReviewDB extends AbstractDB<Review>{
-    private final Map<Integer, Review> reviewMap;
+    private final Map<String, Review> reviewMap;
     public ReviewDB(){
         this.reviewMap = new HashMap<>();
     }
@@ -16,7 +16,7 @@ public class ReviewDB extends AbstractDB<Review>{
         super.put(review);
     }
 
-    public Review getReview(Integer reviewID){
+    public Review getReview(String reviewID){
         Review review = this.reviewMap.get(reviewID);
         if(review == null){
             return super.get(reviewID);
@@ -25,12 +25,12 @@ public class ReviewDB extends AbstractDB<Review>{
         }
     }
 
-    public void deleteReview(Integer reviewID){
+    public void deleteReview(String reviewID){
         this.reviewMap.remove(reviewID);
         super.delete(reviewID);
     }
 
-    public boolean updateasReview(Integer reviewID, Review review){
+    public boolean updateasReview(String reviewID, Review review){
         if(this.reviewMap.containsKey(reviewID)){
             this.reviewMap.remove(reviewID);
             this.reviewMap.put(reviewID, review);

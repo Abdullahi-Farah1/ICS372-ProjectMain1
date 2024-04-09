@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MovieDB extends AbstractDB<Movie>{
-    private final Map<Integer, Movie> movieMap;
+    private final Map<String, Movie> movieMap;
     public MovieDB(){
         this.movieMap = new HashMap<>();
     }
@@ -15,7 +15,7 @@ public class MovieDB extends AbstractDB<Movie>{
         movieMap.put(movie.getMediaID(), movie);
         super.put(movie);
     }
-    public Movie getMovie(Integer mediaID){
+    public Movie getMovie(String mediaID){
         Movie mov = movieMap.get(mediaID);
         if (mov == null){
             return super.get(mediaID);
@@ -24,12 +24,12 @@ public class MovieDB extends AbstractDB<Movie>{
         }
     }
 
-    public void deleteMovie(Integer mediaID){
+    public void deleteMovie(String mediaID){
         movieMap.remove(mediaID);
         super.delete(mediaID);
     }
 
-    public boolean updateMovie(Integer mediaID, Movie newMovie){
+    public boolean updateMovie(String mediaID, Movie newMovie){
         if (movieMap.containsKey(mediaID)) {
             movieMap.put(mediaID, newMovie);
             super.delete(mediaID);

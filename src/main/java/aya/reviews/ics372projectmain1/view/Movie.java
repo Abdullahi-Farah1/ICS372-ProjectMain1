@@ -1,4 +1,4 @@
-package aya.reviews.ics372projectmain1.uimodels;
+package aya.reviews.ics372projectmain1.view;
 
 import aya.reviews.ics372projectmain1.MainApp;
 import javafx.event.ActionEvent;

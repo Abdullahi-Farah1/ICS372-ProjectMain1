@@ -17,13 +17,13 @@ public abstract class AbstractDB<T> implements DBOperations<T> {
         System.out.println("Putting to DB using query, " + query);
     }
     @Override
-    public T get(Integer id){
+    public T get(String id){
         String query = this.buildGetQuery();
         System.out.println("Putting to DB using query, " + query);
         return null;
     }
     @Override
-    public void delete(Integer id){
+    public void delete(String id){
         String query = this.buildDeleteQuery();
         System.out.println("Deleting from DB using query, " + query);
     }

@@ -7,7 +7,7 @@ abstract class Media{
     private ArrayList<Review> reviews;
     private String name;
     private String description;
-    private int mediaID;
+    private String mediaID;
     public Media(String name, String description){
         setName(name);
         setDescription(description);
@@ -46,11 +46,11 @@ abstract class Media{
         this.description = description;
     }
 
-    public int getMediaID() {
+    public String getMediaID() {
         return mediaID;
     }
 
-    public void setMediaID(int mediaID) {
+    public void setMediaID(String mediaID) {
         this.mediaID = mediaID;
     }
 }
