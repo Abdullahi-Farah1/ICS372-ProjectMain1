@@ -31,7 +31,13 @@ public class Movie {
     private Button rate3;
 
     @FXML
-    private void handleReviewButtonClick() {
+    private void handleReviewButtonClick() throws IOException {
+        MainApp m = new MainApp();
+        m.changeScene("review.fxml");
+
+
+
+
         TextInputDialog dialog = new TextInputDialog();
         dialog.setTitle("Write a Review");
         dialog.setHeaderText(null);
