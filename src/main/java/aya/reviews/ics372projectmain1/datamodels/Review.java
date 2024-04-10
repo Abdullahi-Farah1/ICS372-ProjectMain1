@@ -2,11 +2,11 @@ package aya.reviews.ics372projectmain1.datamodels;
 
 
 public class Review {
-    public int getUserID() {
+    public String getUserID() {
         return userID;
     }
 
-    public void setUserID(int userID) {
+    public void setUserID(String userID) {
         this.userID = userID;
     }
 
@@ -26,11 +26,11 @@ public class Review {
         this.reviewDescription = reviewDescription;
     }
 
-    public int getMediaID() {
+    public String getMediaID() {
         return mediaID;
     }
 
-    public void setMediaID(int mediaID) {
+    public void setMediaID(String mediaID) {
         this.mediaID = mediaID;
     }
 
@@ -42,10 +42,10 @@ public class Review {
         this.reviewID = reviewID;
     }
 
-    private int userID;
+    private String userID;
     private int starRating;
     private String reviewDescription;
-    private int mediaID;
+    private String mediaID;
 
     private String reviewID;
 }

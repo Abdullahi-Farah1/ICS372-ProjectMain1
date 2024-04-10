@@ -57,6 +57,7 @@ public class Movie {
                 int ratingValue = Integer.parseInt(rating);
                 if (ratingValue >= 1 && ratingValue <= 10) {
                     // Process the rating, e.g., save it to a database or display it
+
                     System.out.println("Rating submitted: " + ratingValue);
                 } else {
                     // Show error message for invalid rating

@@ -2,6 +2,7 @@ package aya.reviews.ics372projectmain1.database;
 
 import aya.reviews.ics372projectmain1.datamodels.Review;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -41,6 +42,31 @@ public class ReviewDB extends AbstractDB<Review>{
         return false;
     }
 
+    public ArrayList<Review> getAllReviews(){
+        return (ArrayList<Review>)(this.reviewMap.values());
+    }
+
+    public ArrayList<Review> getReviewsForMedia(String id){
+        ArrayList<Review> reviews = this.getAllReviews();
+        ArrayList<Review> res = new ArrayList<Review>();
+        for (Review r : reviews){
+            if(r.getMediaID().equals(id)){
+                res.add(r);
+            }
+        }
+        return  res;
+    }
+    public ArrayList<Review> getReviewsForUser(String userID) {
+        ArrayList<Review> reviews = this.getAllReviews();
+        ArrayList<Review> res = new ArrayList<Review>();
+        for (Review r : reviews){
+            if(r.getUserID().equals(userID)){
+                res.add(r);
+            }
+        }
+        return  res;
+    }
+
 
     @Override
     public String buildGetQuery() {
@@ -56,4 +82,6 @@ public class ReviewDB extends AbstractDB<Review>{
     public String buildUpdateQuery() {
         return "UPDATE QUERY FROM REVIEWDB";
     }
+
+
 }
