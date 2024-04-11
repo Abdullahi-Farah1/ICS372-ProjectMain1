@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1c99bea-ac04-430d-8517-dfc508172f08" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/aya/reviews/ics372projectmain1/image3456.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/aya/reviews/ics372projectmain1/image40404.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/aya/reviews/ics372projectmain1/images1236.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/view/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/view/Movie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/view/UIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/view/UIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/aya/reviews/ics372projectmain1/afterLogin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/aya/reviews/ics372projectmain1/afterLogin.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +63,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "Application.Movie.executor": "Run",
     "Gradle.Build ICS372-ProjectMain1.executor": "Run",
     "Gradle.ICS372-ProjectMain1 [:MainApp.main()].executor": "Run",
@@ -97,7 +101,6 @@
     <configuration name="Movie" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Movie" />
       <module name="ICS372-ProjectMain1.main" />
-      <option name="UNNAMED_CLASS_CONFIGURATION" value="true" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -127,7 +130,11 @@
       <updated>1712546058793</updated>
       <workItem from="1712546059939" duration="1908000" />
       <workItem from="1712607741768" duration="16701000" />
+      <workItem from="1712842022230" duration="2886000" />
     </task>
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

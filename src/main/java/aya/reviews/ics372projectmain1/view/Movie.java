@@ -3,13 +3,17 @@ package aya.reviews.ics372projectmain1.view;
 import aya.reviews.ics372projectmain1.MainApp;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Cursor;
 import javafx.scene.control.Button;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextInputDialog;
 
 import java.io.IOException;
 import java.util.Optional;
 
 public class Movie {
+    @FXML
+    private ScrollPane scroolpane;
     @FXML
     private Button tvshow1;
     @FXML
@@ -67,6 +71,13 @@ public class Movie {
         s.changeScene("tvshow.fxml");
 
     }
+
+    public void logOut(ActionEvent event) throws IOException {
+        MainApp s = new MainApp();
+        s.changeScene("scene.fxml");
+
+    }
+
 
 
 }
