@@ -34,20 +34,6 @@ public class Movie {
     private void handleReviewButtonClick() throws IOException {
         MainApp m = new MainApp();
         m.changeScene("review.fxml");
-
-
-
-
-        TextInputDialog dialog = new TextInputDialog();
-        dialog.setTitle("Write a Review");
-        dialog.setHeaderText(null);
-        dialog.setContentText("Please write your review:");
-
-        Optional<String> result = dialog.showAndWait();
-        result.ifPresent(review -> {
-            // Process the review, e.g., save it to a database or display it
-            System.out.println("Review submitted: " + review);
-        });
     }
 
     @FXML

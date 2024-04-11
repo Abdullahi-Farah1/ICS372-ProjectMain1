@@ -3,7 +3,9 @@ package aya.reviews.ics372projectmain1.view;
 
 
 import aya.reviews.ics372projectmain1.MainApp;
+import aya.reviews.ics372projectmain1.control.ReviewControl;
 import aya.reviews.ics372projectmain1.control.UserController;
+import aya.reviews.ics372projectmain1.datamodels.Review;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -30,9 +32,12 @@ public class UIController {
 
     private Map<String, String> registeredUsers; // Map to store registered users
     private final UserController userController;
+    private final ReviewControl reviewControl;
 
     public UIController() {
         this.userController = new UserController();
+        this.reviewControl = new ReviewControl();
+
     }
 
     @FXML
@@ -79,22 +84,20 @@ public class UIController {
         }
     }
     public void reviewAndRate() {
-        // Retrieve the user input from the text fields
-        String review = reviewInput.getText();
+        String reviewText = reviewInput.getText();
         int rating = Integer.parseInt(ratingInput.getText());
-
-        // Do something with the user input (e.g., store it in variables, process it, etc.)
-        System.out.println("Review: " + review);
-        System.out.println("Rating: " + rating);
-
-
+        Review review = new Review();
+        review.setReviewDescription(reviewText);
+        review.setStarRating(rating);
+        review.setReviewID("FIX REVIEW ID");
+        review.setMediaID("FIX MEDIA ID");
+        review.setUserID("FIX USER ID");
+        this.reviewControl.submitReview(review);
     }
 
     public void cancelButton(ActionEvent event) throws IOException {
         MainApp s = new MainApp();
         s.changeScene("afterLogin.fxml");
-
-
     }
 
 }
