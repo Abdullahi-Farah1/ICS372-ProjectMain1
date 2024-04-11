@@ -40,7 +40,7 @@ public abstract class TVShowDB extends AbstractDB<TVShow>{
         return false;
     }
     @Override
-    public String buildPutQuery(){
+    public String buildPutQuery(TVShow show){
         return "PUT FROM TV";
     }
     @Override

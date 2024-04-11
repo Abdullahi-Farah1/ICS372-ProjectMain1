@@ -39,7 +39,7 @@ public class MovieDB extends AbstractDB<Movie>{
         return false;
     }
 
-    public String buildPutQuery(){
+    public String buildPutQuery(Movie movie){
         return "PUT FROM MOVIE";
     }
     public String buildGetQuery(){

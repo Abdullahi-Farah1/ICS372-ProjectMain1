@@ -2,12 +2,14 @@ package aya.reviews.ics372projectmain1.datamodels;
 
 
 public class Review {
-    public Review(String userID, int starRating, String reviewDescription, String mediaID, String reviewID){
+    public Review(String userID, int starRating, String reviewDescription, String mediaID){
         this.userID = userID;
         this.starRating = starRating;
         this.reviewDescription = reviewDescription;
+        // bad way to compute hash but whatever
+        this.reviewID = String.valueOf((userID + reviewDescription + mediaID).hashCode());
         this.mediaID = mediaID;
-        this.reviewID = reviewID;
+
 
     };
     public String getUserID() {

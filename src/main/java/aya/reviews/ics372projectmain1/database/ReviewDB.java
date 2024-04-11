@@ -31,7 +31,7 @@ public class ReviewDB extends AbstractDB<Review>{
         super.delete(reviewID);
     }
 
-    public boolean updateasReview(String reviewID, Review review){
+    public boolean updateReview(String reviewID, Review review){
         if(this.reviewMap.containsKey(reviewID)){
             this.reviewMap.remove(reviewID);
             this.reviewMap.put(reviewID, review);
@@ -66,8 +66,11 @@ public class ReviewDB extends AbstractDB<Review>{
         }
         return  res;
     }
-
-
+    @Override
+    public String buildPutQuery(Review review) {
+        return String.format("INSERT INTO Reviews (user_id, media_id, rating, review_text)\n" +
+                "VALUES (user_id_value, media_id_value, rating_value, 'review_text_value');\n");
+    }
     @Override
     public String buildGetQuery() {
         return "GET QUERY FROM REVIEWDB";

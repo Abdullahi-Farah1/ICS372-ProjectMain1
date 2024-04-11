@@ -90,9 +90,8 @@ public class UIController {
 
         // Defaulting to -1 to indicate no rating.
         int rating = -1;
-        String userID = "";
+        String userID = userController.getCurrentUser().getUserID();
         String mediaID = "";
-        String reviewID =  "";
         try{
             rating = Integer.parseInt(ratingInput.getText());
             if (rating < 0 || rating > 10){
@@ -110,8 +109,8 @@ public class UIController {
 
         }
         System.out.println("Submitting review using rating " +  rating);
-        Review review = new Review(userID, rating, reviewText, mediaID, reviewID);
-        this.reviewControl.submitReview(review);
+        Review review = new Review(userID, rating, reviewText, mediaID);
+        this.reviewControl.submitReview(review, this.userController.getCurrentUser());
     }
 
 

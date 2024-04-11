@@ -3,6 +3,7 @@ import aya.reviews.ics372projectmain1.database.UserDB;
 import aya.reviews.ics372projectmain1.datamodels.User;
 public class UserController {
     private UserDB userDB;
+    private User currentUser;
 
     public UserController() {
         this.userDB = new UserDB();
@@ -16,6 +17,7 @@ public class UserController {
         }
         else if (user != null && user.getPassword().equals(password)) {
             // User login successful
+            this.currentUser = user;
             return true;
         } else {
             // User login failed
@@ -34,5 +36,8 @@ public class UserController {
             userDB.putUser(newUser);
             return true;
         }
+    }
+    public User getCurrentUser(){
+        return this.currentUser;
     }
 }

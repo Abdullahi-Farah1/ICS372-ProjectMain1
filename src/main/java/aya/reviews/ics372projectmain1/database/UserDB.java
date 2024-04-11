@@ -50,6 +50,11 @@ public class UserDB extends AbstractDB<User> {
         return false;
     }
     @Override
+    public String buildPutQuery(User user) {
+        return String.format("INSERT INTO Users (displayName, password)\n" +
+                "VALUES ('%s', '%s');\n", user.getDisplayName(), user.getPassword());
+    }
+    @Override
     public String buildGetQuery() {
         return "GET QUERY FROM USERDB";
     }
