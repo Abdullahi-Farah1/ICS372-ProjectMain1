@@ -11,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -41,16 +42,16 @@ public class UIController {
     }
 
     @FXML
-    public void userLogIn(ActionEvent event) throws IOException {
+    public void userLogIn(ActionEvent event) throws IOException, SQLException {
         checkLogIn();
     }
 
     @FXML
-    public void registerUser(ActionEvent event) throws IOException {
+    public void registerUser(ActionEvent event) throws IOException, SQLException {
         registerUser();
     }
 
-    private void checkLogIn() throws IOException {
+    private void checkLogIn() throws IOException, SQLException {
 
         String enteredUsername = username.getText();
         String enteredPassword = password.getText();
@@ -69,7 +70,7 @@ public class UIController {
         }
     }
 
-    private void registerUser() {
+    private void registerUser() throws SQLException {
         String enteredUsername = username.getText();
         String enteredPassword = password.getText();
 

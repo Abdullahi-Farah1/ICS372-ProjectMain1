@@ -2,6 +2,7 @@ package aya.reviews.ics372projectmain1.database;
 
 import aya.reviews.ics372projectmain1.datamodels.Review;
 
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -18,29 +19,10 @@ public class ReviewDB extends AbstractDB<Review>{
     }
 
     public Review getReview(String reviewID){
-        Review review = this.reviewMap.get(reviewID);
-        if(review == null){
-            return super.get(reviewID);
-        }else{
-            return review;
-        }
+        ResultSet results = super.get(reviewID);
+        return new Review("", -1, "", "");
     }
 
-    public void deleteReview(String reviewID){
-        this.reviewMap.remove(reviewID);
-        super.delete(reviewID);
-    }
-
-    public boolean updateReview(String reviewID, Review review){
-        if(this.reviewMap.containsKey(reviewID)){
-            this.reviewMap.remove(reviewID);
-            this.reviewMap.put(reviewID, review);
-            super.delete(reviewID);
-            super.put(review);
-            return true;
-        }
-        return false;
-    }
 
     public ArrayList<Review> getAllReviews(){
         return (ArrayList<Review>)(this.reviewMap.values());
@@ -69,10 +51,14 @@ public class ReviewDB extends AbstractDB<Review>{
     @Override
     public String buildPutQuery(Review review) {
         return String.format("INSERT INTO Reviews (user_id, media_id, rating, review_text)\n" +
-                "VALUES (user_id_value, media_id_value, rating_value, 'review_text_value');\n");
+                "VALUES (%s, %s, %s, '%s');\n",
+                Integer.valueOf(review.getUserID()),
+                Integer.valueOf(review.getMediaID()),
+                review.getStarRating(),
+                review.getReviewDescription());
     }
     @Override
-    public String buildGetQuery() {
+    public String buildGetQuery(String reviewID) {
         return "GET QUERY FROM REVIEWDB";
     }
 

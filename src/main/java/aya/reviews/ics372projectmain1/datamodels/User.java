@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 
 public class User {
-    public User(String displayName, String password){
+    public User(String id, String displayName, String password){
         setDisplayName(displayName);
         setPassword(password);
-        setUserID(String.valueOf(displayName.hashCode()));
+        setUserID(id);
     }
     public User(){
         System.out.println("Default Constructor");

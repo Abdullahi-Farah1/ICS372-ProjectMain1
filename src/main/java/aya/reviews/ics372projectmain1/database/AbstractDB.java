@@ -17,14 +17,29 @@ public abstract class AbstractDB<T> implements DBOperations<T> {
             Connection connection = DriverManager.getConnection(URL);
             Statement statement = connection.createStatement();
             statement.executeUpdate(query);
-
-            statement.close();
-            connection.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
-    public abstract String buildGetQuery();
+    private ResultSet GetDB(String query) {
+        ResultSet resultSet = null;
+        Statement statement = null;
+        Connection connection = null;
+        try {
+            connection = DriverManager.getConnection(URL);
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(query);
+            if (!resultSet.isBeforeFirst()) {
+                System.out.println("No user found with username 'austin'.");
+                return null;
+            } else if (resultSet.isClosed())
+                System.out.println("ResultSet is closed...?");
+            return resultSet;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public abstract String buildGetQuery(String itemID);
     public abstract String buildPutQuery(T item);
 
     public abstract String buildDeleteQuery();
@@ -36,14 +51,10 @@ public abstract class AbstractDB<T> implements DBOperations<T> {
         System.out.println("Putting to DB using query, " + query);
     }
     @Override
-    public T get(String id){
-        String query = this.buildGetQuery();
+    public ResultSet get(String itemID){
+        String query = this.buildGetQuery(itemID);
+        ResultSet results = this.GetDB(query);
         System.out.println("Putting to DB using query, " + query);
-        return null;
-    }
-    @Override
-    public void delete(String id){
-        String query = this.buildDeleteQuery();
-        System.out.println("Deleting from DB using query, " + query);
+        return results;
     }
 }

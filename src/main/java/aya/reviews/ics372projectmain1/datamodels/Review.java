@@ -9,8 +9,6 @@ public class Review {
         // bad way to compute hash but whatever
         this.reviewID = String.valueOf((userID + reviewDescription + mediaID).hashCode());
         this.mediaID = mediaID;
-
-
     };
     public String getUserID() {
         return userID;
