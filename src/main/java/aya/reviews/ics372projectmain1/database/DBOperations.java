@@ -1,7 +1,8 @@
 package aya.reviews.ics372projectmain1.database;
 
+import java.sql.ResultSet;
+
 public interface DBOperations<T> {
     void put(T item);
-    T get(String id);
-    void delete(String id);
+    ResultSet get(String id);
 }

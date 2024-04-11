@@ -1,8 +1,10 @@
 package aya.reviews.ics372projectmain1.database;
-
+import java.sql.ResultSet;
 import aya.reviews.ics372projectmain1.datamodels.TVShow;
 import aya.reviews.ics372projectmain1.datamodels.User;
 
+import javax.xml.transform.Result;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,45 +15,30 @@ public class UserDB extends AbstractDB<User> {
     }
 
     public void putUser(User user){
-        this.userMap.put(user.getDisplayName(), user);
+        System.out.println("Putting new user to DB");
         super.put(user);
     }
-    public User getUserByName(String username){
-        User user = this.userMap.get(username);
-        if(user == null){
-            return super.get(username);
-        }
-        else{
-            return user;
-        }
-    }
-    public User getUser(String userID){
-        User user = this.userMap.get(userID);
-        if(user == null){
-            return super.get(userID);
-        }
-        else{
-            return user;
-        }
-    }
-    public void deleteUser(String username){
-        this.userMap.remove(username);
-        super.delete(username);
-    }
 
-    public boolean updateUser(String userID, User newUser){
-        if(this.userMap.containsKey(userID)){
-            this.userMap.remove(userID);
-            this.userMap.put(userID, newUser);
-            super.delete(userID);
-            super.put(newUser);
-            return true;
+    public User getUser(String userID) throws SQLException {
+        ResultSet results = super.get(userID);
+        if (results == null){
+            return null;
         }
-        return false;
+        System.out.println(results.toString());
+        String id = String.valueOf(results.getInt("user_id"));
+        String username = results.getString("displayName");
+        String password = results.getString("password");
+        return new User(id, username, password);
+
     }
     @Override
-    public String buildGetQuery() {
-        return "GET QUERY FROM USERDB";
+    public String buildPutQuery(User user) {
+        return String.format("INSERT INTO Users (displayName, password)\n" +
+                "VALUES ('%s', '%s');\n", user.getDisplayName(), user.getPassword());
+    }
+    @Override
+    public String buildGetQuery(String displayName) {
+        return String.format("SELECT * from Users WHERE displayName == '%s';", displayName);
     }
 
     @Override

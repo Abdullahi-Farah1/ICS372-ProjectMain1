@@ -1,6 +1,7 @@
 module aya.reviews.ics372projectmain1 {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.sql;
 
 
     opens aya.reviews.ics372projectmain1 to javafx.fxml;

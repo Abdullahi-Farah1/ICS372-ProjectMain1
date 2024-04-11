@@ -11,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -41,16 +42,16 @@ public class UIController {
     }
 
     @FXML
-    public void userLogIn(ActionEvent event) throws IOException {
+    public void userLogIn(ActionEvent event) throws IOException, SQLException {
         checkLogIn();
     }
 
     @FXML
-    public void registerUser(ActionEvent event) throws IOException {
+    public void registerUser(ActionEvent event) throws IOException, SQLException {
         registerUser();
     }
 
-    private void checkLogIn() throws IOException {
+    private void checkLogIn() throws IOException, SQLException {
 
         String enteredUsername = username.getText();
         String enteredPassword = password.getText();
@@ -69,7 +70,7 @@ public class UIController {
         }
     }
 
-    private void registerUser() {
+    private void registerUser() throws SQLException {
         String enteredUsername = username.getText();
         String enteredPassword = password.getText();
 
@@ -83,17 +84,37 @@ public class UIController {
             }
         }
     }
+
     public void reviewAndRate() {
         String reviewText = reviewInput.getText();
-        int rating = Integer.parseInt(ratingInput.getText());
-        Review review = new Review();
-        review.setReviewDescription(reviewText);
-        review.setStarRating(rating);
-        review.setReviewID("FIX REVIEW ID");
-        review.setMediaID("FIX MEDIA ID");
-        review.setUserID("FIX USER ID");
-        this.reviewControl.submitReview(review);
+        String ratingText = ratingInput.getText();
+
+        // Defaulting to -1 to indicate no rating.
+        int rating = -1;
+        String userID = userController.getCurrentUser().getUserID();
+        String mediaID = "";
+        try{
+            rating = Integer.parseInt(ratingInput.getText());
+            if (rating < 0 || rating > 10){
+                // bad input
+                System.out.println("Rating is not between 0 and 10 ");
+                return;
+            }
+        }
+        catch(Exception e){
+            if (!ratingText.isEmpty()) {
+                // bad input but NOT empty. Reject rating input.
+                System.out.println("Rating is not numeric");
+                return;
+            }
+
+        }
+        System.out.println("Submitting review using rating " +  rating);
+        Review review = new Review(userID, rating, reviewText, mediaID);
+        this.reviewControl.submitReview(review, this.userController.getCurrentUser());
     }
+
+
 
     public void cancelButton(ActionEvent event) throws IOException {
         MainApp s = new MainApp();

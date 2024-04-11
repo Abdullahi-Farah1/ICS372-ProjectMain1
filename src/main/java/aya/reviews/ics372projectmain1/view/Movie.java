@@ -30,12 +30,12 @@ public class Movie {
     @FXML
     private Button rate3;
 
+
     @FXML
     private void handleReviewButtonClick() throws IOException {
         MainApp m = new MainApp();
         m.changeScene("review.fxml");
     }
-
     @FXML
     private void handleRateButtonClick() {
         TextInputDialog dialog = new TextInputDialog();
@@ -56,6 +56,7 @@ public class Movie {
                     System.out.println("Invalid rating. Please enter a number between 1 and 10.");
                 }
             } catch (NumberFormatException e) {
+
                 // Show error message for non-numeric input
                 System.out.println("Invalid rating. Please enter a number between 1 and 10.");
             }

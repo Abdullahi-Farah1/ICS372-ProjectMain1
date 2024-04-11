@@ -2,6 +2,7 @@ package aya.reviews.ics372projectmain1.database;
 
 import aya.reviews.ics372projectmain1.datamodels.Review;
 
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -18,29 +19,10 @@ public class ReviewDB extends AbstractDB<Review>{
     }
 
     public Review getReview(String reviewID){
-        Review review = this.reviewMap.get(reviewID);
-        if(review == null){
-            return super.get(reviewID);
-        }else{
-            return review;
-        }
+        ResultSet results = super.get(reviewID);
+        return new Review("", -1, "", "");
     }
 
-    public void deleteReview(String reviewID){
-        this.reviewMap.remove(reviewID);
-        super.delete(reviewID);
-    }
-
-    public boolean updateasReview(String reviewID, Review review){
-        if(this.reviewMap.containsKey(reviewID)){
-            this.reviewMap.remove(reviewID);
-            this.reviewMap.put(reviewID, review);
-            super.delete(reviewID);
-            super.put(review);
-            return true;
-        }
-        return false;
-    }
 
     public ArrayList<Review> getAllReviews(){
         return (ArrayList<Review>)(this.reviewMap.values());
@@ -66,22 +48,18 @@ public class ReviewDB extends AbstractDB<Review>{
         }
         return  res;
     }
-
-
     @Override
-    public String buildGetQuery() {
+    public String buildPutQuery(Review review) {
+        return String.format("INSERT INTO Reviews (user_id, media_id, rating, review_text)\n" +
+                "VALUES (%s, %s, %s, '%s');\n",
+                Integer.valueOf(review.getUserID()),
+                Integer.valueOf(review.getMediaID()),
+                review.getStarRating(),
+                review.getReviewDescription());
+    }
+    @Override
+    public String buildGetQuery(String reviewID) {
         return "GET QUERY FROM REVIEWDB";
     }
-
-    @Override
-    public String buildDeleteQuery() {
-        return "DELETE QUERY FROM REVIEWDB";
-    }
-
-    @Override
-    public String buildUpdateQuery() {
-        return "UPDATE QUERY FROM REVIEWDB";
-    }
-
 
 }
