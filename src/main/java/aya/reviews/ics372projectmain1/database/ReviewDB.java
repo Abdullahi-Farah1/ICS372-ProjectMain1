@@ -62,15 +62,4 @@ public class ReviewDB extends AbstractDB<Review>{
         return "GET QUERY FROM REVIEWDB";
     }
 
-    @Override
-    public String buildDeleteQuery() {
-        return "DELETE QUERY FROM REVIEWDB";
-    }
-
-    @Override
-    public String buildUpdateQuery() {
-        return "UPDATE QUERY FROM REVIEWDB";
-    }
-
-
 }

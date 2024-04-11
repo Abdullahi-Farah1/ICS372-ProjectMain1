@@ -6,17 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f1c99bea-ac04-430d-8517-dfc508172f08" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/database.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/control/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/control/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/database/AbstractDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/database/AbstractDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/database/DBOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/database/DBOperations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/database/MovieDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/database/MovieDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/database/ReviewDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/database/ReviewDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/database/TVShowDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/database/TVShowDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/database/UserDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/database/UserDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/datamodels/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/datamodels/Review.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/datamodels/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/datamodels/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/view/UIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/view/UIController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +129,7 @@
       <updated>1712546058793</updated>
       <workItem from="1712546059939" duration="1908000" />
       <workItem from="1712607741768" duration="16701000" />
-      <workItem from="1712862621017" duration="3940000" />
+      <workItem from="1712862621017" duration="4692000" />
     </task>
     <servers />
   </component>

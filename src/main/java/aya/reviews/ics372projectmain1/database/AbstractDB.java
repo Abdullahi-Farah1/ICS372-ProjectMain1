@@ -42,8 +42,6 @@ public abstract class AbstractDB<T> implements DBOperations<T> {
     public abstract String buildGetQuery(String itemID);
     public abstract String buildPutQuery(T item);
 
-    public abstract String buildDeleteQuery();
-    public abstract String buildUpdateQuery();
     @Override
     public void put(T item){
         String query = this.buildPutQuery(item);
