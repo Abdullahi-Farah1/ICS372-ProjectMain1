@@ -1,10 +1,10 @@
 package aya.reviews.ics372projectmain1.control;
 import aya.reviews.ics372projectmain1.database.UserDB;
 import aya.reviews.ics372projectmain1.datamodels.User;
-public class UserController {
+public class UserControl {
     private UserDB userDB;
 
-    public UserController() {
+    public UserControl() {
         this.userDB = new UserDB();
     }
 
