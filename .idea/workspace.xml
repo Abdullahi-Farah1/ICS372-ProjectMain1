@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1c99bea-ac04-430d-8517-dfc508172f08" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/Movie.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/TVShow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/aya/reviews/ics372projectmain1/tvshow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/MainApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/MainAppController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/aya/reviews/ics372projectmain1/afterLogin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/aya/reviews/ics372projectmain1/afterLogin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/aya/reviews/ics372projectmain1/scene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/aya/reviews/ics372projectmain1/scene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/view/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/view/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/view/UIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/view/UIController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +18,23 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ICS372-ProjectMain1" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -40,28 +50,29 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="workspaceImportEnabled" value="true" />
-      </MavenImportingSettings>
-    </option>
-  </component>
   <component name="ProjectId" id="2enh4Hi95v09XpTJSuZO10c3cuh" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Movie.executor": "Run",
+    "Gradle.Build ICS372-ProjectMain1.executor": "Run",
+    "Gradle.ICS372-ProjectMain1 [:MainApp.main()].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "project.structure.last.edited": "Modules",
+    "git-widget-placeholder": "abdullahi-branch",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.General"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -69,13 +80,13 @@
       <recent name="C:\Users\abduo\Downloads\ICS372-ProjectMain1\src\main\resources\aya\reviews\ics372projectmain1" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.MainApp">
     <configuration name="MainApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="aya.reviews.ics372projectmain1.MainApp" />
       <module name="ICS372-ProjectMain1.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="aya.reviews.ics372projectmain1.*" />
+          <option name="PATTERN" value="aya.reviews.ics372projectmain1.view.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -83,11 +94,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Movie" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Movie" />
+      <module name="ICS372-ProjectMain1.main" />
+      <option name="UNNAMED_CLASS_CONFIGURATION" value="true" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Movie" />
         <item itemvalue="Application.MainApp" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.10-temurin-17.0.10-f644763e9732-2dd12e70" />
+        <option value="jdk-21.0.2-openjdk-21.0.2-f644763e9732-a81d5c7c" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

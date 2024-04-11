@@ -1,19 +1,24 @@
-package aya.reviews.ics372projectmain1;
+package aya.reviews.ics372projectmain1.view;
 
 
 
+import aya.reviews.ics372projectmain1.MainApp;
+import aya.reviews.ics372projectmain1.control.ReviewControl;
+import aya.reviews.ics372projectmain1.control.UserController;
+import aya.reviews.ics372projectmain1.datamodels.Review;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
 public class UIController {
+    @FXML
+    private TextArea reviewInput;
+    @FXML
+    private TextField ratingInput;
     @FXML
     private Button button;
     @FXML
@@ -26,11 +31,13 @@ public class UIController {
     private Button register1;
 
     private Map<String, String> registeredUsers; // Map to store registered users
+    private final UserController userController;
+    private final ReviewControl reviewControl;
 
     public UIController() {
-        registeredUsers = new HashMap<>();
-        // For simplicity, I'm adding a default admin user during initialization
-        registeredUsers.put("admin", "password");
+        this.userController = new UserController();
+        this.reviewControl = new ReviewControl();
+
     }
 
     @FXML
@@ -44,25 +51,22 @@ public class UIController {
     }
 
     private void checkLogIn() throws IOException {
-        MainApp m = new MainApp();
+
         String enteredUsername = username.getText();
         String enteredPassword = password.getText();
 
         if (enteredUsername.isEmpty() || enteredPassword.isEmpty()) {
             wrongLogIn.setText("Please enter both username and password.");
         } else {
-            if (authenticate(enteredUsername, enteredPassword)) {
+            boolean res = this.userController.loginUser(enteredUsername, enteredPassword);
+            if (res) {
                 wrongLogIn.setText("Login successful");
+                MainApp m = new MainApp();
                 m.changeScene("afterLogin.fxml");
             } else {
                 wrongLogIn.setText("Incorrect login");
             }
         }
-    }
-
-    private boolean authenticate(String username, String password) {
-        // Check if the entered username and password match any registered user
-        return registeredUsers.containsKey(username) && registeredUsers.get(username).equals(password);
     }
 
     private void registerUser() {
@@ -72,12 +76,28 @@ public class UIController {
         if (enteredUsername.isEmpty() || enteredPassword.isEmpty()) {
             wrongLogIn.setText("Please enter both username and password.");
         } else {
-            if (registeredUsers.containsKey(enteredUsername)) {
+            // registerUser should probably not implicitly register the user, but i'm lazy
+            boolean res = this.userController.registerUser(enteredUsername, enteredPassword);
+            if (!res) {
                 wrongLogIn.setText("User already registered. Please log in.");
-            } else {
-                registeredUsers.put(enteredUsername, enteredPassword);
-                wrongLogIn.setText("Registration successful. Please log in.");
             }
         }
     }
+    public void reviewAndRate() {
+        String reviewText = reviewInput.getText();
+        int rating = Integer.parseInt(ratingInput.getText());
+        Review review = new Review();
+        review.setReviewDescription(reviewText);
+        review.setStarRating(rating);
+        review.setReviewID("FIX REVIEW ID");
+        review.setMediaID("FIX MEDIA ID");
+        review.setUserID("FIX USER ID");
+        this.reviewControl.submitReview(review);
+    }
+
+    public void cancelButton(ActionEvent event) throws IOException {
+        MainApp s = new MainApp();
+        s.changeScene("afterLogin.fxml");
+    }
+
 }

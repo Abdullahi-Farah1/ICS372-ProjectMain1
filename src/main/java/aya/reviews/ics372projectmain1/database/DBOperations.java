@@ -4,5 +4,4 @@ public interface DBOperations<T> {
     void put(T item);
     T get(String id);
     void delete(String id);
-    void update(String id, T newItem);
 }

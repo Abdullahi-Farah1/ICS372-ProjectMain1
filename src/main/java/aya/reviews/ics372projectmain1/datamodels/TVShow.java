@@ -1,6 +1,6 @@
 package aya.reviews.ics372projectmain1.datamodels;
 
-class TVShow extends Media {
+public class TVShow extends Media {
 
     private int numSeasons;
 
@@ -15,4 +15,5 @@ class TVShow extends Media {
     public void setNumSeasons(int numSeasons) {
         this.numSeasons = numSeasons;
     }
+
 }

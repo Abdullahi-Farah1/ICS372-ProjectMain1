@@ -1,4 +1,4 @@
-package aya.reviews.ics372projectmain1.uimodels;
+package aya.reviews.ics372projectmain1.view;
 
 import aya.reviews.ics372projectmain1.MainApp;
 import javafx.event.ActionEvent;
@@ -31,17 +31,9 @@ public class Movie {
     private Button rate3;
 
     @FXML
-    private void handleReviewButtonClick() {
-        TextInputDialog dialog = new TextInputDialog();
-        dialog.setTitle("Write a Review");
-        dialog.setHeaderText(null);
-        dialog.setContentText("Please write your review:");
-
-        Optional<String> result = dialog.showAndWait();
-        result.ifPresent(review -> {
-            // Process the review, e.g., save it to a database or display it
-            System.out.println("Review submitted: " + review);
-        });
+    private void handleReviewButtonClick() throws IOException {
+        MainApp m = new MainApp();
+        m.changeScene("review.fxml");
     }
 
     @FXML
@@ -57,6 +49,7 @@ public class Movie {
                 int ratingValue = Integer.parseInt(rating);
                 if (ratingValue >= 1 && ratingValue <= 10) {
                     // Process the rating, e.g., save it to a database or display it
+
                     System.out.println("Rating submitted: " + ratingValue);
                 } else {
                     // Show error message for invalid rating
