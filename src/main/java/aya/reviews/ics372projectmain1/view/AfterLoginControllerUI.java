@@ -8,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
@@ -76,11 +77,42 @@ public class AfterLoginControllerUI implements Initializable {
         this.description3.setText("click");
         this.handleReview(this.movie3);
     }
+
+    private int computeFontSizeForTitle(int titleLength){
+        // this is an unhinged way to implement variable font size.
+        double a = 100;
+        double b = 0;   // lower val -> bigger size
+        double c = -50;
+        double x = titleLength;
+        double y = a / (Math.log10(x + b)) + c;
+        return (int) y;
+    }
+
+
+    private void setFont(int size, Text t){
+        Font f = new Font(size);
+        t.setFont(f);
+    }
     public void updateTitles(){
+        int titleLength = movie1.getName().length();
+        System.out.println("Title: "+movie1.getName());
+        int fontSize = computeFontSizeForTitle(titleLength);
+        System.out.println("len: " + titleLength);
+        System.out.println("Size: " + fontSize);
+        setFont(fontSize, title1);
         title1.setText(movie1.getName());
+
         description1.setText(movie1.getDescription());
+
+        titleLength = movie2.getName().length();
+        fontSize = computeFontSizeForTitle(titleLength);
+        setFont(fontSize, title2);
         title2.setText(movie2.getName());
         description2.setText(movie2.getDescription());
+
+        titleLength = movie3.getName().length();
+        fontSize = computeFontSizeForTitle(titleLength);
+        setFont(fontSize, title3);
         title3.setText(movie3.getName());
         description3.setText(movie3.getDescription());
     }
