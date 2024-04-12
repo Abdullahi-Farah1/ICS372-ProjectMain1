@@ -5,15 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1c99bea-ac04-430d-8517-dfc508172f08" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/view/ReviewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/control/MovieControl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/MainApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/control/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/control/UserControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/view/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/view/AfterLoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/view/UIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/view/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/control/ReviewControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/control/ReviewControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/control/UserControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/control/UserControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/view/AfterLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/view/AfterLoginControllerUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/view/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/view/LoginControllerUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/view/ReviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/view/ReviewControllerUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/view/TVShow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/view/TVShowUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/aya/reviews/ics372projectmain1/afterLogin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/aya/reviews/ics372projectmain1/afterLogin.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/aya/reviews/ics372projectmain1/review.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/aya/reviews/ics372projectmain1/review.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/aya/reviews/ics372projectmain1/scene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/aya/reviews/ics372projectmain1/scene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/aya/reviews/ics372projectmain1/tvshow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/aya/reviews/ics372projectmain1/tvshow.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

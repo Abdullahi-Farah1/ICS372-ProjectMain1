@@ -17,6 +17,7 @@ public class MainApp extends Application {
     private static Stage stg;
     public static UserControl userController;
     public static ReviewControl reviewController;
+    
     @Override
     public void start(Stage stage) throws IOException {
         userController = new UserControl();

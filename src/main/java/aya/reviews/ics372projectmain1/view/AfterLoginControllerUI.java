@@ -1,18 +1,17 @@
 package aya.reviews.ics372projectmain1.view;
 
 import aya.reviews.ics372projectmain1.MainApp;
+import aya.reviews.ics372projectmain1.datamodels.Movie;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.control.TextInputDialog;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
-import java.util.Optional;
 
-public class AfterLoginController {
+public class AfterLoginControllerUI {
     @FXML
     private Button review1;
     @FXML
@@ -20,9 +19,9 @@ public class AfterLoginController {
     @FXML
     private Button review3;
 
-    private AfterLoginController movie1;
-    private AfterLoginController movie2;
-    private AfterLoginController movie3;
+    private Movie movie1;
+    private Movie movie2;
+    private Movie movie3;
 
     @FXML
     private Text title1;
@@ -42,7 +41,9 @@ public class AfterLoginController {
     @FXML
     private TextField searchField;
 
-    private void handleReview(AfterLoginController m) throws IOException {
+    private void handleReview(Movie m) throws IOException {
+        // yuck
+        MainApp.reviewController.setCurrentMovie(m);
         MainApp.changeScene("review.fxml");
     }
 
@@ -79,4 +80,11 @@ public class AfterLoginController {
         searchField.setText("Click");
 
     }
+
+    public void populateMovies(){
+        // select top 3, set the text area and stuff for each.
+        // get list of movies from movieController (random?)
+
+    }
+
 }

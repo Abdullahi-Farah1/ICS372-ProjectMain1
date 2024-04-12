@@ -9,7 +9,7 @@ import javafx.scene.control.*;
 
 import java.io.IOException;
 
-public class LoginController {
+public class LoginControllerUI {
     @FXML
     private Label wrongLogIn;
     @FXML
