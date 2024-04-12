@@ -1,6 +1,10 @@
 package aya.reviews.ics372projectmain1.control;
 import aya.reviews.ics372projectmain1.database.UserDB;
 import aya.reviews.ics372projectmain1.datamodels.User;
+
+import java.sql.SQLException;
+import java.util.concurrent.TimeUnit;
+
 public class UserControl {
     private final UserDB userDB;
     private User currentUser;
@@ -12,8 +16,8 @@ public class UserControl {
         return this.currentUser;
     }
 
-    public boolean loginUser(String username, String password) {
-        User user = userDB.getUser(username);
+    public boolean loginUser(String username, String password) throws SQLException {
+        User user = userDB.getUserByName(username);
         if(username.equals("admin") && password.equals("password")){
             return true;
         }
@@ -27,15 +31,15 @@ public class UserControl {
         }
     }
 
-    public boolean registerUser(String username, String password){
-        User user = userDB.getUser(username);
+    public boolean registerUser(String username, String password) throws SQLException {
+        User user = userDB.getUserByName(username);
         if (user != null){
             // user already exists in DB
             return false;
         }
         else{
-            User newUser = new User(username, password);
-            userDB.putUser(newUser);
+//            User newUser = new User(username, password);
+            userDB.putUser(username, password);
             return true;
         }
     }

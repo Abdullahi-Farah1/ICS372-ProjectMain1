@@ -1,10 +1,40 @@
 package aya.reviews.ics372projectmain1.database;
-import aya.reviews.ics372projectmain1.datamodels.Movie;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 public abstract class AbstractDB<T> implements DBOperations<T> {
     /*
      * This is the template method.
      * */
-  
+
+    private final String URL = "jdbc:sqlite:database.sqlite";
+    private void insertDB(String query){
+        try {
+            Connection connection = DriverManager.getConnection(URL);
+            Statement statement = connection.createStatement();
+            statement.executeUpdate(query);
+            connection.close();
+            statement.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    private ResultSet getDB(String query) {
+
+        try {
+            ResultSet res;
+            Connection connection = DriverManager.getConnection(URL);
+            Statement statement = connection.createStatement();
+            res = statement.executeQuery(query);
+            System.out.println("Query successfully executed");
+            return res;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
     public String buildPutQuery() {
         return null;
     }
@@ -12,14 +42,12 @@ public abstract class AbstractDB<T> implements DBOperations<T> {
     public abstract String buildGetQuery();
 
     @Override
-    public void put(T item){
-        String query = this.buildPutQuery();
-        System.out.println("Putting to DB using query, " + query);
+    public void put(String query){
+        this.insertDB(query);
     }
     @Override
-    public T get(String query){
-        String query = this.buildGetQuery();
-        System.out.println("Putting to DB using query, " + query);
-        return null;
+    public ResultSet get(String query){
+        System.out.println("Getting from Database using query: " + query);
+        return this.getDB(query);
     }
 }

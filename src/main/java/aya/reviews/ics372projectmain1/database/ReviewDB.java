@@ -2,48 +2,35 @@ package aya.reviews.ics372projectmain1.database;
 
 import aya.reviews.ics372projectmain1.datamodels.Review;
 
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class ReviewDB extends AbstractDB<Review>{
-    private final Map<String, Review> reviewMap;
     public ReviewDB(){
-        this.reviewMap = new HashMap<>();
+
     }
 
     public void putReview(Review review){
-        this.reviewMap.put(review.getReviewID(), review);
-        super.put(review);
+        String userID = review.getUserID();
+        String reviewID = review.getReviewID();
+        String mediaID = review.getMediaID();
+        int rating = review.getStarRating();
+        String reviewText = review.getReviewDescription();
+        String query = String.format("INSERT INTO Reviews(user_id, media_id, rating, review_text, review_id) VALUES (%s,%s,%s,%s,'%s')",userID, mediaID, rating, reviewText,reviewID);
+        super.put(query);
     }
 
     public Review getReview(String reviewID){
-        Review review = this.reviewMap.get(reviewID);
-        if(review == null){
-            return super.get(reviewID);
-        }else{
-            return review;
-        }
+        Review r =  new Review();
+        ResultSet s =  super.get(reviewID);
+        return r;
     }
 
-    public void deleteReview(String reviewID){
-        this.reviewMap.remove(reviewID);
-        super.delete(reviewID);
-    }
-
-    public boolean updateasReview(String reviewID, Review review){
-        if(this.reviewMap.containsKey(reviewID)){
-            this.reviewMap.remove(reviewID);
-            this.reviewMap.put(reviewID, review);
-            super.delete(reviewID);
-            super.put(review);
-            return true;
-        }
-        return false;
-    }
 
     public ArrayList<Review> getAllReviews(){
-        return (ArrayList<Review>)(this.reviewMap.values());
+        return new ArrayList<>();
     }
 
     public ArrayList<Review> getReviewsForMedia(String id){
@@ -72,16 +59,4 @@ public class ReviewDB extends AbstractDB<Review>{
     public String buildGetQuery() {
         return "GET QUERY FROM REVIEWDB";
     }
-
-    @Override
-    public String buildDeleteQuery() {
-        return "DELETE QUERY FROM REVIEWDB";
-    }
-
-    @Override
-    public String buildUpdateQuery() {
-        return "UPDATE QUERY FROM REVIEWDB";
-    }
-
-
 }

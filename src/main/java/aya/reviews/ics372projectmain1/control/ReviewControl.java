@@ -32,4 +32,5 @@ public class ReviewControl {
     public Movie getCurrentMovie(){
         return this.currentMovie;
     }
+
 }

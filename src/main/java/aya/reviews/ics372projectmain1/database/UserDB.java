@@ -3,64 +3,45 @@ package aya.reviews.ics372projectmain1.database;
 import aya.reviews.ics372projectmain1.datamodels.TVShow;
 import aya.reviews.ics372projectmain1.datamodels.User;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
 public class UserDB extends AbstractDB<User> {
-    private final Map<String, User> userMap;
+
     public UserDB(){
-        this.userMap = new HashMap<>();
+
     }
 
-    public void putUser(User user){
-        this.userMap.put(user.getDisplayName(), user);
-        super.put(user);
+    public void putUser(String name, String password){
+        String query = String.format("INSERT INTO Users(displayName, password) VALUES ('%s', '%s')", name, password);
+        super.put(query);
     }
-    public User getUserByName(String username){
-        User user = this.userMap.get(username);
-        if(user == null){
-            return super.get(username);
+    public User getUserByName(String username) throws SQLException {
+        String query = String.format("SELECT * FROM Users WHERE displayName = '%s'", username);
+        ResultSet res = super.get(query);
+
+        String name = "empty";
+        String password = "empty";
+        int id = -1;
+
+        while (res.next()) {
+
+            name = res.getString("displayName");
+            password = res.getString("password");
+            id = res.getInt("user_id");
         }
-        else{
-            return user;
+        res.close();
+        // very, very stupid
+        if(name.equals("empty")){
+            return null;
         }
-    }
-    public User getUser(String userID){
-        User user = this.userMap.get(userID);
-        if(user == null){
-            return super.get(userID);
-        }
-        else{
-            return user;
-        }
-    }
-    public void deleteUser(String username){
-        this.userMap.remove(username);
-        super.delete(username);
+        return new User(name, password, id);
     }
 
-    public boolean updateUser(String userID, User newUser){
-        if(this.userMap.containsKey(userID)){
-            this.userMap.remove(userID);
-            this.userMap.put(userID, newUser);
-            super.delete(userID);
-            super.put(newUser);
-            return true;
-        }
-        return false;
-    }
     @Override
     public String buildGetQuery() {
         return "GET QUERY FROM USERDB";
-    }
-
-    @Override
-    public String buildDeleteQuery() {
-        return "DELETE QUERY FROM USERDB";
-    }
-
-    @Override
-    public String buildUpdateQuery() {
-        return "UPDATE QUERY FROM USERDB";
     }
 }

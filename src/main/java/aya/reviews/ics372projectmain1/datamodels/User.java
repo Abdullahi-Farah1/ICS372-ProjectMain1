@@ -2,13 +2,15 @@ package aya.reviews.ics372projectmain1.datamodels;
 import java.util.ArrayList;
 
 public class User {
-    public User(String displayName, String password){
+    public User(String displayName, String password, int id){
         setDisplayName(displayName);
         setPassword(password);
+        setUserID(id);
     }
     public User(){
         System.out.println("Default Constructor");
     }
+
 
     public int getUserID() {
         return userID;

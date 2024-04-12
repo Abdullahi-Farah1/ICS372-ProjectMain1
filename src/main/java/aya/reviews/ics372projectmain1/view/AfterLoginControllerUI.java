@@ -4,14 +4,19 @@ import aya.reviews.ics372projectmain1.MainApp;
 import aya.reviews.ics372projectmain1.datamodels.Movie;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
 
-public class AfterLoginControllerUI {
+public class AfterLoginControllerUI implements Initializable {
     @FXML
     private Button review1;
     @FXML
@@ -71,20 +76,43 @@ public class AfterLoginControllerUI {
         this.description3.setText("click");
         this.handleReview(this.movie3);
     }
-
-    public void nextPageHandler(ActionEvent actionEvent) {
-        System.out.println("nextPageHandler");
+    public void updateTitles(){
+        title1.setText(movie1.getName());
+        description1.setText(movie1.getDescription());
+        title2.setText(movie2.getName());
+        description2.setText(movie2.getDescription());
+        title3.setText(movie3.getName());
+        description3.setText(movie3.getDescription());
+    }
+    @FXML
+    private void nextPageHandler(ActionEvent actionEvent) {
+        populateMovies();
     }
 
-    public void searchHandler(ActionEvent actionEvent) {
+    @FXML
+    private void searchHandler(ActionEvent actionEvent) {
         searchField.setText("Click");
+    }
 
+    private void updateMovies(){
+        List<Movie> movies = MainApp.fetchThree();
+        if (movies == null){
+            return;
+        }else{
+            movie1 = movies.get(0);
+            movie2 = movies.get(1);
+            movie3 = movies.get(2);
+        }
     }
 
     public void populateMovies(){
-        // select top 3, set the text area and stuff for each.
-        // get list of movies from movieController (random?)
-
+        System.out.println("Populating movies...");
+        this.updateMovies();
+        updateTitles();
     }
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        populateMovies();
+    }
 }
