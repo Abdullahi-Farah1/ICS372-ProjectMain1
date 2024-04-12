@@ -1,61 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aya.reviews.ics372projectmain1.view.Movie">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aya.reviews.ics372projectmain1.view.AfterLoginControllerUI">
    <children>
-      <BorderPane prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #002629;">
+      <BorderPane prefHeight="562.0" prefWidth="928.0" style="-fx-background-color: #002629;">
          <top>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <ImageView fitHeight="414.0" fitWidth="292.0">
-                     <image>
-                        <Image url="@black-panther-web.jpg" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="412.0" fitWidth="329.0" layoutX="291.0" layoutY="2.0">
-                     <image>
-                        <Image url="@71eHZFw+GlL._AC_UF1000,1000_QL80_.jpg" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="416.0" fitWidth="282.0" layoutX="620.0" layoutY="-2.0">
-                     <image>
-                        <Image url="@6408f676b5811234c887ca62_top%20gun%20maverick-min.png" />
-                     </image>
-                  </ImageView>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e8b900" height="364.0" layoutY="5.0" stroke="BLACK" strokeType="INSIDE" width="928.0" />
+                  <TilePane layoutY="14.0" prefHeight="383.0" prefWidth="891.0">
+                     <children>
+                        <GridPane prefHeight="359.0" prefWidth="926.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="134.0" minHeight="10.0" prefHeight="89.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="248.0" minHeight="10.0" prefHeight="239.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="234.0" minHeight="0.0" prefHeight="54.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Button fx:id="review1" mnemonicParsing="false" onAction="#reviewClick1" prefHeight="30.0" prefWidth="298.0" text="Review" GridPane.rowIndex="2" />
+                              <Button fx:id="review2" mnemonicParsing="false" onAction="#reviewClick2" prefHeight="30.0" prefWidth="297.0" text="Review" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Button fx:id="review3" mnemonicParsing="false" onAction="#reviewClick3" prefHeight="30.0" prefWidth="298.0" text="Review" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Text fx:id="title1" strokeType="OUTSIDE" strokeWidth="0.0" text="TITLE" textAlignment="CENTER" wrappingWidth="298.02392578125">
+                                 <font>
+                                    <Font size="48.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="title2" strokeType="OUTSIDE" strokeWidth="0.0" text="TITLE" textAlignment="CENTER" wrappingWidth="308.2421875" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="48.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="title3" strokeType="OUTSIDE" strokeWidth="0.0" text="TITLE" textAlignment="CENTER" wrappingWidth="284.02392578125" GridPane.columnIndex="2">
+                                 <font>
+                                    <Font size="48.0" />
+                                 </font>
+                              </Text>
+                              <TextArea fx:id="description1" prefHeight="200.0" prefWidth="200.0" text="Description&#10;" wrapText="true" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font></TextArea>
+                              <TextArea fx:id="description2" prefHeight="200.0" prefWidth="200.0" text="Description&#10;" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font></TextArea>
+                              <TextArea fx:id="description3" prefHeight="200.0" prefWidth="200.0" text="Description&#10;" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font></TextArea>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </TilePane>
                </children>
             </AnchorPane>
          </top>
          <bottom>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label layoutX="159.0" layoutY="33.0" prefHeight="120.0" prefWidth="604.0" style="-fx-background-color: #ffc900;" text="Movie Review Page">
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#485765" height="225.0" layoutY="-25.0" stroke="BLACK" strokeType="INSIDE" width="928.0" />
+                  <Button fx:id="tvshow1" layoutX="807.0" layoutY="143.0" mnemonicParsing="false" onAction="#nextPage" prefHeight="43.0" prefWidth="109.0" style="-fx-background-color: #ffc900;" text="TVShow" />
+                  <Button layoutX="825.0" layoutY="-17.0" mnemonicParsing="false" onAction="#nextPageHandler" prefHeight="35.0" prefWidth="96.0" text="Next Page" />
+                  <TextField fx:id="searchField" layoutX="6.0" layoutY="-20.0" prefHeight="24.0" prefWidth="218.0" />
+                  <Button fx:id="searchButton" layoutX="224.0" layoutY="-20.0" mnemonicParsing="false" onAction="#searchHandler" text="Search" />
+                  <Text layoutX="14.0" layoutY="167.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="3.0" text="AYA Reviews">
                      <font>
-                        <Font size="69.0" />
+                        <Font size="72.0" />
                      </font>
-                  </Label>
-                  <Button fx:id="tvshow1" layoutX="802.0" layoutY="153.0" mnemonicParsing="false" onAction="#nextPage" prefHeight="30.0" prefWidth="86.0" style="-fx-background-color: #ffc900;" text="TVShow" />
+                  </Text>
                </children>
             </AnchorPane>
          </bottom>
-         <center>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-               <children>
-                  <Button fx:id="review2" layoutX="383.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleReviewButtonClick" prefHeight="30.0" prefWidth="139.0" text="Review" />
-                  <Button fx:id="rate2" layoutX="383.0" layoutY="43.0" mnemonicParsing="false" onAction="#handleRateButtonClick" prefHeight="30.0" prefWidth="139.0" style="-fx-background-color: #ffc900;" text="Rate" />
-                  <Button fx:id="review3" layoutX="716.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleReviewButtonClick" prefHeight="30.0" prefWidth="139.0" text="Review" />
-                  <Button fx:id="rate3" layoutX="716.0" layoutY="43.0" mnemonicParsing="false" onAction="#handleRateButtonClick" prefHeight="30.0" prefWidth="139.0" style="-fx-background-color: #ffc900;" text="Rate" />
-                  <Button fx:id="review1" layoutX="64.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleReviewButtonClick" prefHeight="30.0" prefWidth="139.0" text="Review" />
-                  <Button fx:id="rate1" layoutX="64.0" layoutY="43.0" mnemonicParsing="false" onAction="#handleRateButtonClick" prefHeight="30.0" prefWidth="139.0" style="-fx-background-color: #ffc900;" text="Rate" />
-               </children>
-            </AnchorPane>
-         </center>
       </BorderPane>
    </children>
 </AnchorPane>

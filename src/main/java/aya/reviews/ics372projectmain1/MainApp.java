@@ -1,5 +1,8 @@
 package aya.reviews.ics372projectmain1;
 
+import aya.reviews.ics372projectmain1.control.MovieControl;
+import aya.reviews.ics372projectmain1.control.ReviewControl;
+import aya.reviews.ics372projectmain1.control.UserControl;
 import aya.reviews.ics372projectmain1.database.MovieDB;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -8,16 +11,37 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 import aya.reviews.ics372projectmain1.datamodels.Movie;
 public class MainApp extends Application {
     private static Stage stg;
+    public static UserControl userController;
+    public static ReviewControl reviewController;
+    public static MovieControl movieControl;
+
+    private static ArrayList<Movie> movieCache;
+    private static int pointer = 0;
+    public static List<Movie> fetchThree(){
+        try {
+            List<Movie> movies = movieCache.subList(pointer, pointer + 3);
+            pointer += 2;
+            return movies;
+        }catch(IndexOutOfBoundsException e){
+            System.out.println("No more movies in cache");
+            return null;
+        }
+
+    }
     @Override
-    public void start(Stage stage) throws IOException {
-//        MovieDB movieDB = new MovieDB();
-//        Movie m =  new Movie("a", "a", 2);
-//        movieDB.putMovie(m);
+    public void start(Stage stage) throws IOException, SQLException {
+        userController = new UserControl();
+        reviewController =  new ReviewControl();
+        movieControl = new MovieControl();
+        movieCache = movieControl.getAllMovies();
 
         stg = stage;
 
@@ -28,10 +52,24 @@ public class MainApp extends Application {
         stage.show();
     }
 
-    public void changeScene(String fxml) throws IOException {
-        Parent pane = FXMLLoader.load(getClass().getResource(fxml));
+    public static void changeScene(String fxml) throws IOException {
+        Parent pane = FXMLLoader.load(MainApp.class.getResource(fxml));
         Scene scen = new Scene(pane, 900, 700);
         stg.setScene(scen);
+    }
+
+    public static UserControl getUserController() {
+        return userController;
+    }
+
+    public static ReviewControl getReviewController() {
+        return reviewController;
+    }
+
+    public static  MovieControl getMovieController(){return  movieControl;}
+
+    public static ArrayList<Movie> getAllMovies(){
+        return movieCache;
     }
 
     public static void main(String[] args) {

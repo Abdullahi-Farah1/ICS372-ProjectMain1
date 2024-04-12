@@ -3,18 +3,21 @@ import aya.reviews.ics372projectmain1.database.UserDB;
 import aya.reviews.ics372projectmain1.datamodels.User;
 
 import java.sql.SQLException;
+import java.util.concurrent.TimeUnit;
 
-public class UserController {
-    private UserDB userDB;
+public class UserControl {
+    private final UserDB userDB;
     private User currentUser;
-
-    public UserController() {
+    public UserControl() {
         this.userDB = new UserDB();
     }
 
-    public boolean loginUser(String username, String password) throws SQLException {
+    public User getCurrentUser(){
+        return this.currentUser;
+    }
 
-        User user = userDB.getUser(username);
+    public boolean loginUser(String username, String password) throws SQLException {
+        User user = userDB.getUserByName(username);
         if(username.equals("admin") && password.equals("password")){
             return true;
         }
@@ -29,19 +32,15 @@ public class UserController {
     }
 
     public boolean registerUser(String username, String password) throws SQLException {
-        User user = userDB.getUser(username);
+        User user = userDB.getUserByName(username);
         if (user != null){
             // user already exists in DB
             return false;
         }
         else{
-            // The constructor for user shouldn't accept an id, but I wrote it poorly and am too lazy to fix.
-            User newUser = new User("",username, password);
-            userDB.putUser(newUser);
+//            User newUser = new User(username, password);
+            userDB.putUser(username, password);
             return true;
         }
-    }
-    public User getCurrentUser(){
-        return this.currentUser;
     }
 }

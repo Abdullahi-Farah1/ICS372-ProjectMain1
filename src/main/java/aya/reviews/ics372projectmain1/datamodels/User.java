@@ -1,10 +1,8 @@
 package aya.reviews.ics372projectmain1.datamodels;
 import java.util.ArrayList;
 
-
-
 public class User {
-    public User(String id, String displayName, String password){
+    public User(String displayName, String password, int id){
         setDisplayName(displayName);
         setPassword(password);
         setUserID(id);
@@ -13,11 +11,12 @@ public class User {
         System.out.println("Default Constructor");
     }
 
-    public String getUserID() {
+
+    public int getUserID() {
         return userID;
     }
 
-    public void setUserID(String userID) {
+    public void setUserID(int userID) {
         this.userID = userID;
     }
 
@@ -49,7 +48,7 @@ public class User {
         this.reviews.add(review);
     }
 
-    private String userID;
+    private int userID;
     private String displayName;
     private String password;
     private ArrayList<Review> reviews;

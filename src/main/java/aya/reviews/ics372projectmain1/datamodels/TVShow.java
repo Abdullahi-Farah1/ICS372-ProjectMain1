@@ -8,6 +8,11 @@ public class TVShow extends Media {
         super(name, description);
         setNumSeasons(numSeasons);
     }
+
+    public TVShow() {
+
+    }
+
     public int getNumSeasons() {
         return numSeasons;
     }

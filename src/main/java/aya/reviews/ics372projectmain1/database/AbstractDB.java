@@ -1,6 +1,4 @@
 package aya.reviews.ics372projectmain1.database;
-import aya.reviews.ics372projectmain1.datamodels.Movie;
-import aya.reviews.ics372projectmain1.datamodels.User;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -11,48 +9,45 @@ public abstract class AbstractDB<T> implements DBOperations<T> {
     /*
      * This is the template method.
      * */
+
     private final String URL = "jdbc:sqlite:database.sqlite";
-    private void InsertDB(String query){
+    private void insertDB(String query){
         try {
             Connection connection = DriverManager.getConnection(URL);
             Statement statement = connection.createStatement();
             statement.executeUpdate(query);
+            connection.close();
+            statement.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
-    private ResultSet GetDB(String query) {
-        ResultSet resultSet = null;
-        Statement statement = null;
-        Connection connection = null;
+    private ResultSet getDB(String query) {
+
         try {
-            connection = DriverManager.getConnection(URL);
-            statement = connection.createStatement();
-            resultSet = statement.executeQuery(query);
-            if (!resultSet.isBeforeFirst()) {
-                System.out.println("No user found with username 'austin'.");
-                return null;
-            } else if (resultSet.isClosed())
-                System.out.println("ResultSet is closed...?");
-            return resultSet;
+            ResultSet res;
+            Connection connection = DriverManager.getConnection(URL);
+            Statement statement = connection.createStatement();
+            res = statement.executeQuery(query);
+            System.out.println("Query successfully executed");
+            return res;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
-    public abstract String buildGetQuery(String itemID);
-    public abstract String buildPutQuery(T item);
+    public String buildPutQuery() {
+        return null;
+    }
+
+    public abstract String buildGetQuery();
 
     @Override
-    public void put(T item){
-        String query = this.buildPutQuery(item);
-        this.InsertDB(query);
-        System.out.println("Putting to DB using query, " + query);
+    public void put(String query){
+        this.insertDB(query);
     }
     @Override
-    public ResultSet get(String itemID){
-        String query = this.buildGetQuery(itemID);
-        ResultSet results = this.GetDB(query);
-        System.out.println("Putting to DB using query, " + query);
-        return results;
+    public ResultSet get(String query){
+        System.out.println("Getting from Database using query: " + query);
+        return this.getDB(query);
     }
 }

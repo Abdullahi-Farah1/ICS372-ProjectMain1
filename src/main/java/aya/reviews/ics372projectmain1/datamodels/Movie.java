@@ -12,6 +12,9 @@ public class Movie extends Media {
         setRuntime(runtime);
     }
 
+    public Movie() {
+    }
+
     public int getRuntime() {
         return runtime;
     }

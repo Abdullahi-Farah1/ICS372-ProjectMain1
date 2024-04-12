@@ -8,24 +8,29 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ReviewDB extends AbstractDB<Review>{
-    private final Map<String, Review> reviewMap;
     public ReviewDB(){
-        this.reviewMap = new HashMap<>();
+
     }
 
     public void putReview(Review review){
-        this.reviewMap.put(review.getReviewID(), review);
-        super.put(review);
+        String userID = review.getUserID();
+        String reviewID = review.getReviewID();
+        String mediaID = review.getMediaID();
+        int rating = review.getStarRating();
+        String reviewText = review.getReviewDescription();
+        String query = String.format("INSERT INTO Reviews(user_id, media_id, rating, review_text, review_id) VALUES (%s,%s,%s,%s,'%s')",userID, mediaID, rating, reviewText,reviewID);
+        super.put(query);
     }
 
     public Review getReview(String reviewID){
-        ResultSet results = super.get(reviewID);
-        return new Review("", -1, "", "");
+        Review r =  new Review();
+        ResultSet s =  super.get(reviewID);
+        return r;
     }
 
 
     public ArrayList<Review> getAllReviews(){
-        return (ArrayList<Review>)(this.reviewMap.values());
+        return new ArrayList<>();
     }
 
     public ArrayList<Review> getReviewsForMedia(String id){
@@ -48,18 +53,10 @@ public class ReviewDB extends AbstractDB<Review>{
         }
         return  res;
     }
+
+
     @Override
-    public String buildPutQuery(Review review) {
-        return String.format("INSERT INTO Reviews (user_id, media_id, rating, review_text)\n" +
-                "VALUES (%s, %s, %s, '%s');\n",
-                Integer.valueOf(review.getUserID()),
-                Integer.valueOf(review.getMediaID()),
-                review.getStarRating(),
-                review.getReviewDescription());
-    }
-    @Override
-    public String buildGetQuery(String reviewID) {
+    public String buildGetQuery() {
         return "GET QUERY FROM REVIEWDB";
     }
-
 }

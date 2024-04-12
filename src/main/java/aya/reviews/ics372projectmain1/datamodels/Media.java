@@ -11,8 +11,6 @@ abstract class Media{
     public Media(String name, String description){
         setName(name);
         setDescription(description);
-        // not a great way to compute its hash but whatever.
-        setMediaID(String.valueOf((name + description).hashCode()));
     }
     public Media(){
         System.out.println("Default Constructor");

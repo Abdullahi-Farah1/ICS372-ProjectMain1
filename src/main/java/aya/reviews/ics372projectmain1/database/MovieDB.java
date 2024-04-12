@@ -1,10 +1,11 @@
 package aya.reviews.ics372projectmain1.database;
 
 import aya.reviews.ics372projectmain1.datamodels.Movie;
-import aya.reviews.ics372projectmain1.datamodels.User;
 
+import javax.xml.transform.Result;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,29 +16,39 @@ public class MovieDB extends AbstractDB<Movie>{
     }
 
     public void putMovie(Movie movie){
-        movieMap.put(movie.getMediaID(), movie);
-        super.put(movie);
+
+        super.put("FIX MOVIE QUERY IN MOVIEDB");
     }
-    public Movie getMovie(String mediaID) throws SQLException {
-        ResultSet results = super.get(mediaID);
-        String id = String.valueOf(results.getInt("user_id"));
-        int runtime = results.getInt("runtime");
-        String description = results.getString("description");
-        String name = results.getString("name");
-        return new Movie(name, description, runtime);
+    public Movie getMovie(String mediaID){
+        ResultSet res = super.get(mediaID);
+        Movie m = new Movie();
+        return m;
+
+//        return super.get(mediaID);
     }
 
+    public ArrayList<Movie> getAllMovies() throws SQLException {
+        String query = "SELECT * FROM Media";
+        ArrayList<Movie> mediaList = new ArrayList<>();
+        ResultSet resultSet = super.get(query);
+        while (resultSet.next()) {
+            String name = resultSet.getString("title");
+            String description = resultSet.getString("description");
+            int id = resultSet.getInt("media_id");
+            Movie media = new Movie(name, description, id);
+            mediaList.add(media);
+        }
+        System.out.println(mediaList.size());
+        System.out.println(mediaList.size());
+        System.out.println(mediaList.size());
 
-    public String buildPutQuery(Movie movie){
+        return mediaList;
+    }
+
+    public String buildPutQuery(){
         return "PUT FROM MOVIE";
     }
-    public String buildGetQuery(String movieID){
+    public String buildGetQuery(){
         return "GET FROM MOVIE";
-    }
-    public String buildDeleteQuery(){
-        return "DELETE FROM MOVIE";
-    }
-    public String buildUpdateQuery(){
-        return "UPDATE FROM MOVIE";
     }
 }

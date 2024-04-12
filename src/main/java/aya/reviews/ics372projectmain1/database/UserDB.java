@@ -1,53 +1,47 @@
 package aya.reviews.ics372projectmain1.database;
-import java.sql.ResultSet;
+
 import aya.reviews.ics372projectmain1.datamodels.TVShow;
 import aya.reviews.ics372projectmain1.datamodels.User;
 
-import javax.xml.transform.Result;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
 public class UserDB extends AbstractDB<User> {
-    private final Map<String, User> userMap;
+
     public UserDB(){
-        this.userMap = new HashMap<>();
+
     }
 
-    public void putUser(User user){
-        System.out.println("Putting new user to DB");
-        super.put(user);
+    public void putUser(String name, String password){
+        String query = String.format("INSERT INTO Users(displayName, password) VALUES ('%s', '%s')", name, password);
+        super.put(query);
     }
+    public User getUserByName(String username) throws SQLException {
+        String query = String.format("SELECT * FROM Users WHERE displayName = '%s'", username);
+        ResultSet res = super.get(query);
 
-    public User getUser(String userID) throws SQLException {
-        ResultSet results = super.get(userID);
-        if (results == null){
+        String name = "empty";
+        String password = "empty";
+        int id = -1;
+
+        while (res.next()) {
+
+            name = res.getString("displayName");
+            password = res.getString("password");
+            id = res.getInt("user_id");
+        }
+        res.close();
+        // very, very stupid
+        if(name.equals("empty")){
             return null;
         }
-        System.out.println(results.toString());
-        String id = String.valueOf(results.getInt("user_id"));
-        String username = results.getString("displayName");
-        String password = results.getString("password");
-        return new User(id, username, password);
-
-    }
-    @Override
-    public String buildPutQuery(User user) {
-        return String.format("INSERT INTO Users (displayName, password)\n" +
-                "VALUES ('%s', '%s');\n", user.getDisplayName(), user.getPassword());
-    }
-    @Override
-    public String buildGetQuery(String displayName) {
-        return String.format("SELECT * from Users WHERE displayName == '%s';", displayName);
+        return new User(name, password, id);
     }
 
     @Override
-    public String buildDeleteQuery() {
-        return "DELETE QUERY FROM USERDB";
-    }
-
-    @Override
-    public String buildUpdateQuery() {
-        return "UPDATE QUERY FROM USERDB";
+    public String buildGetQuery() {
+        return "GET QUERY FROM USERDB";
     }
 }
