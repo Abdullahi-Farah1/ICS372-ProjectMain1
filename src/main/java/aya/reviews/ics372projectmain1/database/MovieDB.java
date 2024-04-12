@@ -2,6 +2,7 @@ package aya.reviews.ics372projectmain1.database;
 
 import aya.reviews.ics372projectmain1.datamodels.Movie;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,31 +13,16 @@ public class MovieDB extends AbstractDB<Movie>{
     }
 
     public void putMovie(Movie movie){
-        movieMap.put(movie.getMediaID(), movie);
         super.put(movie);
     }
     public Movie getMovie(String mediaID){
-        Movie mov = movieMap.get(mediaID);
-        if (mov == null){
-            return super.get(mediaID);
-        }else{
-            return mov;
-        }
+        return super.get(mediaID);
     }
 
-    public void deleteMovie(String mediaID){
-        movieMap.remove(mediaID);
-        super.delete(mediaID);
-    }
+    public ArrayList<Movie> getAllMovies(){
 
-    public boolean updateMovie(String mediaID, Movie newMovie){
-        if (movieMap.containsKey(mediaID)) {
-            movieMap.put(mediaID, newMovie);
-            super.delete(mediaID);
-            super.put(newMovie);
-            return true;
-        }
-        return false;
+        super.get(query);
+        return new ArrayList<>();
     }
 
     public String buildPutQuery(){
@@ -44,11 +30,5 @@ public class MovieDB extends AbstractDB<Movie>{
     }
     public String buildGetQuery(){
         return "GET FROM MOVIE";
-    }
-    public String buildDeleteQuery(){
-        return "DELETE FROM MOVIE";
-    }
-    public String buildUpdateQuery(){
-        return "UPDATE FROM MOVIE";
     }
 }
