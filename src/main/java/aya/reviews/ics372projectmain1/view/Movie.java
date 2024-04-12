@@ -3,7 +3,6 @@ package aya.reviews.ics372projectmain1.view;
 import aya.reviews.ics372projectmain1.MainApp;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextInputDialog;
@@ -40,7 +39,7 @@ public class Movie {
         m.changeScene("review.fxml");
     }
 
-    @FXML
+    /*@FXML
     private void handleRateButtonClick() {
         TextInputDialog dialog = new TextInputDialog();
         dialog.setTitle("Rate Movie");
@@ -65,8 +64,8 @@ public class Movie {
             }
         });
     }
-
-    public void nextPage(ActionEvent event) throws IOException {
+*/
+    public void toTVshow(ActionEvent event) throws IOException {
         MainApp s = new MainApp();
         s.changeScene("tvshow.fxml");
 

@@ -51,8 +51,8 @@
                         <Font size="69.0" />
                      </font>
                   </Label>
-                  <Button fx:id="tvshow1" layoutX="804.0" layoutY="132.0" mnemonicParsing="false" onAction="#nextPage" prefHeight="30.0" prefWidth="86.0" style="-fx-background-color: #ffc900;" text="TVShow" />
-                  <Button fx:id="rate1" layoutX="8.0" layoutY="63.0" mnemonicParsing="false" onAction="#handleRateButtonClick" prefHeight="30.0" prefWidth="139.0" style="-fx-background-color: #ffc900;" text="Rate" />
+                  <Button fx:id="tvshow1" layoutX="804.0" layoutY="132.0" mnemonicParsing="false" onAction="#toTVshow" prefHeight="30.0" prefWidth="86.0" style="-fx-background-color: #ffc900;" text="TVShow" />
+                  <Button fx:id="rate1" layoutX="8.0" layoutY="63.0" mnemonicParsing="false" onAction="#handleReviewButtonClick" prefHeight="30.0" prefWidth="139.0" style="-fx-background-color: #ffc900;" text="Rate" />
                   <Button fx:id="review1" layoutX="8.0" layoutY="18.0" mnemonicParsing="false" onAction="#handleReviewButtonClick" prefHeight="30.0" prefWidth="139.0" text="Review" />
                   <Button fx:id="Logout" layoutX="14.0" layoutY="132.0" mnemonicParsing="false" onAction="#logOut" prefHeight="30.0" prefWidth="86.0" style="-fx-background-color: #fcc900;" text="Logout" />
                </children>
