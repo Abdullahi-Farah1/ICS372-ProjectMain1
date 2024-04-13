@@ -53,8 +53,9 @@ public class ReviewDB extends AbstractDB<Review>{
 
             Review review = new Review(userID, Integer.valueOf(rating), reviewText, mediaID, reviewID);
             reviewList.add(review);
-        }
 
+        }
+        resultSet.close();
         return reviewList;
 
     }

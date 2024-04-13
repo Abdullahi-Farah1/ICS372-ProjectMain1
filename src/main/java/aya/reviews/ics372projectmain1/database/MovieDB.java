@@ -44,9 +44,7 @@ public class MovieDB extends AbstractDB<Movie>{
             Movie media = new Movie(name, description, id);
             mediaList.add(media);
         }
-        System.out.println(mediaList.size());
-        System.out.println(mediaList.size());
-        System.out.println(mediaList.size());
+        resultSet.close();
 
         return mediaList;
     }

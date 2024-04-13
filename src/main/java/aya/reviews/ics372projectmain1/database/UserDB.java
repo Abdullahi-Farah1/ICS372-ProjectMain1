@@ -51,10 +51,7 @@ public class UserDB extends AbstractDB<User> {
             id = res.getInt("user_id");
         }
         res.close();
-        // very, very stupid
-        if(name.equals("empty")){
-            return null;
-        }
+        
         return new User(name, password, id);
     }
 
