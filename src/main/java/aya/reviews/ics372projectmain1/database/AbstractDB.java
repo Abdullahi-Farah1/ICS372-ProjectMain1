@@ -12,6 +12,7 @@ public abstract class AbstractDB<T> implements DBOperations<T> {
 
     private final String URL = "jdbc:sqlite:database.sqlite";
     private void insertDB(String query){
+        System.out.println("Putting to DB using query: " + query);
         try {
             Connection connection = DriverManager.getConnection(URL);
             Statement statement = connection.createStatement();
@@ -29,6 +30,8 @@ public abstract class AbstractDB<T> implements DBOperations<T> {
             Connection connection = DriverManager.getConnection(URL);
             Statement statement = connection.createStatement();
             res = statement.executeQuery(query);
+            connection.close();
+            statement.close();
             System.out.println("Query successfully executed");
             return res;
         } catch (SQLException e) {

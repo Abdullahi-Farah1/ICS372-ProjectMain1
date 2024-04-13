@@ -8,8 +8,24 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/database.sqlite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/MainApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/control/MovieControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/control/MovieControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/control/ReviewControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/control/ReviewControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/control/UserControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/control/UserControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/database/AbstractDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/database/AbstractDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/database/MovieDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/database/MovieDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/database/ReviewDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/database/ReviewDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/database/UserDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/database/UserDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/datamodels/Media.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/datamodels/Media.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/datamodels/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/datamodels/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/datamodels/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/datamodels/Review.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/datamodels/TVShow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/datamodels/TVShow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/view/AfterLoginControllerUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/view/AfterLoginControllerUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/view/ReviewControllerUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/view/ReviewControllerUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/aya/reviews/ics372projectmain1/6408f676b5811234c887ca62_top gun maverick-min.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/aya/reviews/ics372projectmain1/71eHZFw+GlL._AC_UF1000,1000_QL80_.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/aya/reviews/ics372projectmain1/afterLogin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/aya/reviews/ics372projectmain1/afterLogin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/aya/reviews/ics372projectmain1/black-panther-web.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/aya/reviews/ics372projectmain1/review.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/aya/reviews/ics372projectmain1/review.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,9 +68,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2enh4Hi95v09XpTJSuZO10c3cuh" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -63,28 +79,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Movie.executor": "Run",
-    "Gradle.Build ICS372-ProjectMain1.executor": "Run",
-    "Gradle.ICS372-ProjectMain1 [:MainApp.main()].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "organize-UI",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.General",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Movie.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build ICS372-ProjectMain1.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ICS372-ProjectMain1 [:MainApp.main()].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Movie-features&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.General&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -130,7 +146,9 @@
       <updated>1712546058793</updated>
       <workItem from="1712546059939" duration="1908000" />
       <workItem from="1712607741768" duration="16701000" />
-      <workItem from="1712890675480" duration="10054000" />
+      <workItem from="1712890675480" duration="14345000" />
+      <workItem from="1712987904797" duration="1307000" />
+      <workItem from="1712989220625" duration="1000" />
     </task>
     <servers />
   </component>

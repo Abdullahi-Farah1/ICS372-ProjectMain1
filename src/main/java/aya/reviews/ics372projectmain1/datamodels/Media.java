@@ -4,31 +4,19 @@ import aya.reviews.ics372projectmain1.database.AbstractDB;
 import java.util.ArrayList;
 
 abstract class Media{
-    private ArrayList<Review> reviews;
+
     private String name;
     private String description;
     private String mediaID;
-    public Media(String name, String description){
+    public Media(String name, String description, String mediaID){
         setName(name);
         setDescription(description);
+        setMediaID(mediaID);
     }
     public Media(){
         System.out.println("Default Constructor");
     }
-    public float getAverageStarRating(){
-        float avg = 0;
-        int len = this.reviews.size();
-        for (Review r : this.reviews){
-            avg += r.getStarRating();
-        }
-        return  (avg/len);
-    }
-    public ArrayList<Review> getReviews() {
-        return reviews;
-    }
-    public void setReviews(ArrayList<Review> reviews) {
-        this.reviews = reviews;
-    }
+
 
     public String getName() {
         return name;

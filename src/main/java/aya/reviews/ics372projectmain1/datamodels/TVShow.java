@@ -5,7 +5,7 @@ public class TVShow extends Media {
     private int numSeasons;
 
     public TVShow(String name, String description, int numSeasons){
-        super(name, description);
+        super(name, description, "BROKENMEDIAIDFORTV");
         setNumSeasons(numSeasons);
     }
 

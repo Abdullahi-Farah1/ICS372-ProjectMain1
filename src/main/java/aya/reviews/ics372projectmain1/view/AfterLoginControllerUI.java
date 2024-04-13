@@ -57,21 +57,23 @@ public class AfterLoginControllerUI implements Initializable {
     }
 
     public void reviewClick1(ActionEvent actionEvent) throws IOException {
-        System.out.println("reviewclick1");
         this.title1.setText("click");
         this.description1.setText("click");
+        MainApp.currentMovie = this.movie1;
         this.handleReview(this.movie1);
     }
 
     public void reviewClick2(ActionEvent actionEvent) throws IOException {
         this.title2.setText("click");
         this.description2.setText("click");
+        MainApp.currentMovie = this.movie2;
         this.handleReview(this.movie2);
     }
 
     public void reviewClick3(ActionEvent actionEvent) throws IOException {
         this.title3.setText("click");
         this.description3.setText("click");
+        MainApp.currentMovie = this.movie3;
         this.handleReview(this.movie3);
     }
 

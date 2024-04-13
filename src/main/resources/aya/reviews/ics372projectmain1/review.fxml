@@ -7,34 +7,50 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #002629;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aya.reviews.ics372projectmain1.view.ReviewControllerUI">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="384.0" prefWidth="970.0" style="-fx-background-color: #002629;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aya.reviews.ics372projectmain1.view.ReviewControllerUI">
    <children>
-      <Label layoutX="241.0" layoutY="14.0" text="Review" textFill="#ffc900">
-         <font>
-            <Font size="39.0" />
-         </font>
-      </Label>
-      <TextArea fx:id="reviewInput" layoutX="176.0" layoutY="89.0" prefHeight="155.0" prefWidth="392.0" />
-      <TextField fx:id="ratingInput" layoutX="223.0" layoutY="264.0" prefHeight="38.0" prefWidth="345.0" />
-      <Label layoutX="28.0" layoutY="268.0" prefHeight="31.0" prefWidth="214.0" text="Rate movie (1 to 10):" textFill="#ffc900">
-         <font>
-            <Font size="21.0" />
-         </font>
-      </Label>
-      <Label layoutX="28.0" layoutY="106.0" text="Submit Review:" textFill="#ffc900">
-         <font>
-            <Font size="21.0" />
-         </font>
-      </Label>
-      <Button fx:id="okButton" layoutX="378.0" layoutY="332.0" mnemonicParsing="false" onAction="#reviewAndRate" style="-fx-background-color: #ffc900;" text="OK">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <Button fx:id="cancel" layoutX="273.0" layoutY="332.0" mnemonicParsing="false" onAction="#cancelButton" style="-fx-background-color: #ffc900;" text="Cancel">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
+      <AnchorPane layoutX="14.0" prefHeight="616.0" prefWidth="631.0">
+         <children>
+            <TextArea fx:id="reviewInput" layoutX="8.0" layoutY="89.0" prefHeight="155.0" prefWidth="392.0" />
+            <TextField fx:id="ratingInput" layoutX="8.0" layoutY="289.0" prefHeight="38.0" prefWidth="392.0" />
+            <Label layoutX="8.0" layoutY="253.0" prefHeight="31.0" prefWidth="214.0" text="Rate movie (1 to 10):" textFill="#ffc900">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="8.0" layoutY="62.0" text="Submit Review:" textFill="#ffc900">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Button fx:id="okButton" layoutX="136.0" layoutY="335.0" mnemonicParsing="false" onAction="#reviewAndRate" style="-fx-background-color: #ffc900;" text="Submit Review">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Label fx:id="reviewMovieTitle" layoutX="8.0" layoutY="14.0" text="MovieName" textFill="#ffc900">
+               <font>
+                  <Font size="39.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="510.0" layoutY="14.0" prefHeight="349.0" prefWidth="459.0">
+         <children>
+            <TextArea fx:id="discoverReviewText" layoutX="14.0" layoutY="46.0" prefHeight="194.0" prefWidth="424.0" />
+            <Label fx:id="reviewByUser" layoutX="14.0" prefHeight="44.0" prefWidth="424.0" text="Review by user: " textFill="#ffc900">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Button fx:id="nextReview" layoutX="352.0" layoutY="251.0" mnemonicParsing="false" onAction="#nextReviewHandler" text="Next Review" />
+            <Button fx:id="previousReview" layoutX="239.0" layoutY="251.0" mnemonicParsing="false" onAction="#previousReviewHandler" text="Previous Review" />
+            <Button fx:id="cancel" layoutX="395.0" layoutY="319.0" mnemonicParsing="false" onAction="#cancelButton" style="-fx-background-color: #ffc900;" text="Exit">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

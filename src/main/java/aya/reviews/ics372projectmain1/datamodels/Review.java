@@ -2,6 +2,15 @@ package aya.reviews.ics372projectmain1.datamodels;
 
 
 public class Review {
+
+    public Review(){}
+    public Review(String userID, int starRating, String reviewDescription, String mediaID, String reviewID){
+        this.userID = userID;
+        this.starRating = starRating;
+        this.reviewDescription = reviewDescription;
+        this.mediaID =  mediaID;
+        this.reviewID = reviewID;
+    }
     public String getUserID() {
         return userID;
     }
@@ -48,4 +57,9 @@ public class Review {
     private String mediaID;
 
     private String reviewID;
+
+    @Override
+    public String toString() {
+        return String.format("UserID: %s, starRating: %s, reviewDesc: %s, mediaID: %s, reviewID: %s", userID, starRating, reviewDescription, mediaID, reviewID);
+    }
 }
