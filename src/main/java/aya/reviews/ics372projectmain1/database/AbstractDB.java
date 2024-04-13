@@ -10,28 +10,30 @@ public abstract class AbstractDB<T> implements DBOperations<T> {
      * This is the template method.
      * */
 
-    private final String URL = "jdbc:sqlite:database.sqlite";
+    private static final String URL = "jdbc:sqlite:database.sqlite";
+//    private Connection connection;
     private void insertDB(String query){
+        System.out.println("Putting to DB using query: " + query);
         try {
-            Connection connection = DriverManager.getConnection(URL);
-            Statement statement = connection.createStatement();
+//            Connection connection = DriverManager.getConnection(URL);
+            Statement statement = connect().createStatement();
             statement.executeUpdate(query);
-            connection.close();
-            statement.close();
-        } catch (SQLException e) {
+//            connection.close();
+//            statement.close();
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
     private ResultSet getDB(String query) {
 
-        try {
+        try{
             ResultSet res;
-            Connection connection = DriverManager.getConnection(URL);
-            Statement statement = connection.createStatement();
+//            Connection connection = DriverManager.getConnection(URL);
+            Statement statement = connect().createStatement();
             res = statement.executeQuery(query);
             System.out.println("Query successfully executed");
             return res;
-        } catch (SQLException e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
@@ -50,4 +52,26 @@ public abstract class AbstractDB<T> implements DBOperations<T> {
         System.out.println("Getting from Database using query: " + query);
         return this.getDB(query);
     }
+
+//    public Connection getConnection() throws SQLException {
+//        if(this.connection == null){
+//            Connection c = DriverManager.getConnection(URL) ;
+//            this.connection = c;
+//            return this.connection;
+//        }else{
+//            return this.connection;
+//        }
+//    }
+    private static Connection c = null;
+    public static Connection connect() throws Exception {
+
+        if (c == null) {
+            c = (Connection) DriverManager.getConnection(URL);
+        } else {
+            c.close();
+            c = (Connection) DriverManager.getConnection(URL);
+        }
+        return c;
+    }
+
 }

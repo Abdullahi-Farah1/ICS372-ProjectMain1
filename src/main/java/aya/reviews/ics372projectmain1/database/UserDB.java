@@ -33,10 +33,25 @@ public class UserDB extends AbstractDB<User> {
             id = res.getInt("user_id");
         }
         res.close();
-        // very, very stupid
-        if(name.equals("empty")){
-            return null;
+
+        return new User(name, password, id);
+    }
+    public User getUserByID(String userID) throws SQLException {
+        String query = String.format("SELECT * FROM Users WHERE user_id = '%s'", userID);
+        ResultSet res = super.get(query);
+
+        String name = "empty";
+        String password = "empty";
+        int id = -1;
+
+        while (res.next()) {
+
+            name = res.getString("displayName");
+            password = res.getString("password");
+            id = res.getInt("user_id");
         }
+        res.close();
+        
         return new User(name, password, id);
     }
 

@@ -7,8 +7,8 @@ public class Movie extends Media {
 
     private int runtime;
 
-    public Movie(String name, String description, int runtime){
-        super(name, description);
+    public Movie(String name, String description, String id){
+        super(name, description, id);
         setRuntime(runtime);
     }
 

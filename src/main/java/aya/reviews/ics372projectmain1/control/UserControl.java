@@ -43,4 +43,9 @@ public class UserControl {
             return true;
         }
     }
+
+
+    public User getUserByID(String id) throws SQLException {
+        return this.userDB.getUserByID(id);
+    }
 }

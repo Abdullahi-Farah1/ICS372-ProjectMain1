@@ -4,6 +4,7 @@ import aya.reviews.ics372projectmain1.database.ReviewDB;
 import aya.reviews.ics372projectmain1.datamodels.Movie;
 import aya.reviews.ics372projectmain1.datamodels.Review;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class ReviewControl {
@@ -16,7 +17,7 @@ public class ReviewControl {
     public void submitReview(Review review){
         this.reviewDB.putReview(review);
     }
-    public ArrayList<Review> getMediaReviews(String mediaID){
+    public ArrayList<Review> getMediaReviews(String mediaID) throws SQLException {
         return this.reviewDB.getReviewsForMedia(mediaID);
     }
 

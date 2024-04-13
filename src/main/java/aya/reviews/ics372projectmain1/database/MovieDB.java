@@ -19,10 +19,16 @@ public class MovieDB extends AbstractDB<Movie>{
 
         super.put("FIX MOVIE QUERY IN MOVIEDB");
     }
-    public Movie getMovie(String mediaID){
-        ResultSet res = super.get(mediaID);
-        Movie m = new Movie();
-        return m;
+    public Movie getMovie(String movieName) throws SQLException {
+        String query = String.format("SELECT * FROM Media WHERE title = '%s'", movieName);
+        ResultSet resultSet = super.get(query);
+        String name = resultSet.getString("title");
+        String description = resultSet.getString("description");
+        String id = resultSet.getString("media_id");
+
+        Movie movie = new Movie(name, description, id);
+
+        return movie;
 
 //        return super.get(mediaID);
     }
@@ -34,13 +40,11 @@ public class MovieDB extends AbstractDB<Movie>{
         while (resultSet.next()) {
             String name = resultSet.getString("title");
             String description = resultSet.getString("description");
-            int id = resultSet.getInt("media_id");
+            String id = resultSet.getString("media_id");
             Movie media = new Movie(name, description, id);
             mediaList.add(media);
         }
-        System.out.println(mediaList.size());
-        System.out.println(mediaList.size());
-        System.out.println(mediaList.size());
+        resultSet.close();
 
         return mediaList;
     }

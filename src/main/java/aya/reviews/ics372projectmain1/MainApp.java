@@ -3,7 +3,7 @@ package aya.reviews.ics372projectmain1;
 import aya.reviews.ics372projectmain1.control.MovieControl;
 import aya.reviews.ics372projectmain1.control.ReviewControl;
 import aya.reviews.ics372projectmain1.control.UserControl;
-import aya.reviews.ics372projectmain1.database.MovieDB;
+import aya.reviews.ics372projectmain1.datamodels.Review;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -22,20 +22,39 @@ public class MainApp extends Application {
     public static UserControl userController;
     public static ReviewControl reviewController;
     public static MovieControl movieControl;
+    public static Movie currentMovie;
 
     private static ArrayList<Movie> movieCache;
     private static int pointer = 0;
-    public static List<Movie> fetchThree(){
+    public static List<Movie> forwardThreeMovies(){
         try {
             List<Movie> movies = movieCache.subList(pointer, pointer + 3);
-            pointer += 2;
+            pointer += 3;
             return movies;
         }catch(IndexOutOfBoundsException e){
             System.out.println("No more movies in cache");
+            pointer -= 3;
             return null;
         }
-
     }
+    public static List<Movie> backwardThreeMovies(){
+        try {
+            List<Movie> movies = movieCache.subList(pointer, pointer + 3);
+            pointer -= 3;
+            return movies;
+        }catch(IndexOutOfBoundsException e){
+            System.out.println("No more movies in cache");
+            pointer += 3;
+            return null;
+        }
+    }
+
+    public static ArrayList<Review> getReviewsForMovie(String movieName) throws SQLException {
+        Movie movie = movieControl.getMovie(movieName);
+        String id = movie.getMediaID();
+        return reviewController.getMediaReviews(id);
+    }
+
     @Override
     public void start(Stage stage) throws IOException, SQLException {
         userController = new UserControl();
