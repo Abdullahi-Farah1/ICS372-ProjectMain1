@@ -13,7 +13,6 @@ import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -65,14 +64,12 @@ public class AfterLoginControllerUI implements Initializable {
     }
 
     public void reviewClick2(ActionEvent actionEvent) throws IOException {
-        System.out.println("reviewclick2");
         this.title2.setText("click");
         this.description2.setText("click");
         this.handleReview(this.movie2);
     }
 
     public void reviewClick3(ActionEvent actionEvent) throws IOException {
-        System.out.println("reviewclick3");
         this.title3.setText("click");
         this.description3.setText("click");
         this.handleReview(this.movie3);
@@ -81,11 +78,12 @@ public class AfterLoginControllerUI implements Initializable {
     private int computeFontSizeForTitle(int titleLength){
         // this is an unhinged way to implement variable font size.
         double a = 100;
-        double b = 0;   // lower val -> bigger size
-        double c = -50;
-        double x = titleLength;
-        double y = a / (Math.log10(x + b)) + c;
-        return (int) y;
+        double b = 1.5;   // lower val -> bigger size
+        double c = -40;
+
+        // https://www.desmos.com/calculator/vhk8vmbois
+        double fontSize = Math.max(0.0, (a / (Math.log10(titleLength + b)) + c));
+        return (int) fontSize;
     }
 
 
@@ -118,7 +116,11 @@ public class AfterLoginControllerUI implements Initializable {
     }
     @FXML
     private void nextPageHandler(ActionEvent actionEvent) {
-        populateMovies();
+        populateMoviesForward();
+    }
+    @FXML
+    private void previousPageHandler(ActionEvent actionEvent) {
+        populateMoviesBackward();
     }
 
     @FXML
@@ -126,8 +128,18 @@ public class AfterLoginControllerUI implements Initializable {
         searchField.setText("Click");
     }
 
-    private void updateMovies(){
-        List<Movie> movies = MainApp.fetchThree();
+    private void updateMoviesForward(){
+        List<Movie> movies = MainApp.forwardThreeMovies();
+        if (movies == null){
+            return;
+        }else{
+            movie1 = movies.get(0);
+            movie2 = movies.get(1);
+            movie3 = movies.get(2);
+        }
+    }
+    private void updateMoviesBackward(){
+        List<Movie> movies = MainApp.backwardThreeMovies();
         if (movies == null){
             return;
         }else{
@@ -137,14 +149,19 @@ public class AfterLoginControllerUI implements Initializable {
         }
     }
 
-    public void populateMovies(){
-        System.out.println("Populating movies...");
-        this.updateMovies();
+
+
+    public void populateMoviesForward(){
+        this.updateMoviesForward();
+        updateTitles();
+    }
+    public void populateMoviesBackward(){
+        this.updateMoviesBackward();
         updateTitles();
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        populateMovies();
+        populateMoviesForward();
     }
 }
