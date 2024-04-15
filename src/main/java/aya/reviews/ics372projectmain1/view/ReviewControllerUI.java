@@ -1,7 +1,6 @@
 package aya.reviews.ics372projectmain1.view;
 
-import aya.reviews.ics372projectmain1.MainApp;
-import aya.reviews.ics372projectmain1.control.UserControl;
+import aya.reviews.ics372projectmain1.HelloApplication;
 import aya.reviews.ics372projectmain1.datamodels.Movie;
 import aya.reviews.ics372projectmain1.datamodels.Review;
 import aya.reviews.ics372projectmain1.datamodels.User;
@@ -11,7 +10,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.net.URL;
@@ -39,8 +37,8 @@ public class ReviewControllerUI implements Initializable {
 
     private ArrayList<Review> currentReviewCache;
     public void reviewAndRate() throws IOException {
-        Movie currentMovie = MainApp.getReviewController().getCurrentMovie();
-        User currentUser = MainApp.getUserController().getCurrentUser();
+        Movie currentMovie = HelloApplication.getReviewController().getCurrentMovie();
+        User currentUser = HelloApplication.getUserController().getCurrentUser();
 
         String reviewText = reviewInput.getText();
         int rating = Integer.parseInt(ratingInput.getText());
@@ -50,11 +48,11 @@ public class ReviewControllerUI implements Initializable {
         review.setMediaID(currentMovie.getMediaID());
         review.setReviewID(String.valueOf((reviewText + currentMovie.getName()).hashCode()));
         review.setUserID(String.valueOf(currentUser.getUserID()));
-        MainApp.reviewController.submitReview(review);
+        HelloApplication.reviewController.submitReview(review);
     }
 
     public void cancelButton(ActionEvent event) throws IOException {
-        MainApp.changeScene("afterLogin.fxml");
+        HelloApplication.changeScene("afterLogin.fxml");
     }
 
     public void nextReviewHandler(ActionEvent event) throws IOException{
@@ -73,7 +71,7 @@ public class ReviewControllerUI implements Initializable {
             this.discoverReviewText.setText(curReview.getReviewDescription());
             String userID = curReview.getUserID();
             System.out.println("userID: " + userID);
-            User user = MainApp.getUserController().getUserByID(userID);
+            User user = HelloApplication.getUserController().getUserByID(userID);
             System.out.println("user: " + user);
             String username = user.getDisplayName();
             System.out.println("username: " + username);
@@ -86,10 +84,10 @@ public class ReviewControllerUI implements Initializable {
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        Movie currentMovie = MainApp.currentMovie;
+        Movie currentMovie = HelloApplication.currentMovie;
         this.reviewMovieTitle.setText(currentMovie.getName());
         try {
-            this.currentReviewCache = MainApp.getReviewsForMovie(currentMovie.getName());
+            this.currentReviewCache = HelloApplication.getReviewsForMovie(currentMovie.getName());
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

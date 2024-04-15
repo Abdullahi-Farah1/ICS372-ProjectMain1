@@ -70,9 +70,4 @@ public class ReviewDB extends AbstractDB<Review>{
         return  res;
     }
 
-
-    @Override
-    public String buildGetQuery() {
-        return "GET QUERY FROM REVIEWDB";
-    }
 }

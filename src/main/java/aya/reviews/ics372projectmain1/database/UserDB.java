@@ -54,9 +54,4 @@ public class UserDB extends AbstractDB<User> {
         
         return new User(name, password, id);
     }
-
-    @Override
-    public String buildGetQuery() {
-        return "GET QUERY FROM USERDB";
-    }
 }

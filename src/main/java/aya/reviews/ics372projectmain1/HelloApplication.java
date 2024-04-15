@@ -17,7 +17,7 @@ import java.util.List;
 
 
 import aya.reviews.ics372projectmain1.datamodels.Movie;
-public class MainApp extends Application {
+public class HelloApplication extends Application {
     private static Stage stg;
     public static UserControl userController;
     public static ReviewControl reviewController;
@@ -75,7 +75,7 @@ public class MainApp extends Application {
     }
 
     public static void changeScene(String fxml) throws IOException {
-        Parent pane = FXMLLoader.load(MainApp.class.getResource(fxml));
+        Parent pane = FXMLLoader.load(HelloApplication.class.getResource(fxml));
         stg.getScene().setRoot(pane);
     }
 

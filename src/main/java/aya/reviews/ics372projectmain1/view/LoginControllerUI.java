@@ -2,7 +2,7 @@ package aya.reviews.ics372projectmain1.view;
 
 
 
-import aya.reviews.ics372projectmain1.MainApp;
+import aya.reviews.ics372projectmain1.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -38,11 +38,11 @@ public class LoginControllerUI {
         if (enteredUsername.isEmpty() || enteredPassword.isEmpty()) {
             wrongLogIn.setText("Please enter both username and password.");
         } else {
-            boolean res = MainApp.userController.loginUser(enteredUsername, enteredPassword);
+            boolean res = HelloApplication.userController.loginUser(enteredUsername, enteredPassword);
             if (res) {
                 wrongLogIn.setText("Login successful");
 //                MainApp m = new MainApp();
-                MainApp.changeScene("afterLogin.fxml");
+                HelloApplication.changeScene("afterLogin.fxml");
             } else {
                 wrongLogIn.setText("Incorrect login");
             }
@@ -57,7 +57,7 @@ public class LoginControllerUI {
             wrongLogIn.setText("Please enter both username and password.");
         } else {
             // registerUser should probably not implicitly register the user, but i'm lazy
-            boolean res = MainApp.userController.registerUser(enteredUsername, enteredPassword);
+            boolean res = HelloApplication.userController.registerUser(enteredUsername, enteredPassword);
             if (!res) {
                 wrongLogIn.setText("User already registered. Please log in.");
             }

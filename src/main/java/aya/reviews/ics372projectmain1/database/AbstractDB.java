@@ -24,23 +24,18 @@ public abstract class AbstractDB<T> implements DBOperations<T> {
         }
     }
     private ResultSet getDB(String query) {
-
         try{
             ResultSet res;
 //            Connection connection = DriverManager.getConnection(URL);
             Statement statement = connect().createStatement();
             res = statement.executeQuery(query);
+
             System.out.println("Query successfully executed");
             return res;
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
-    public String buildPutQuery() {
-        return null;
-    }
-
-    public abstract String buildGetQuery();
 
     @Override
     public void put(String query){
@@ -52,15 +47,6 @@ public abstract class AbstractDB<T> implements DBOperations<T> {
         return this.getDB(query);
     }
 
-//    public Connection getConnection() throws SQLException {
-//        if(this.connection == null){
-//            Connection c = DriverManager.getConnection(URL) ;
-//            this.connection = c;
-//            return this.connection;
-//        }else{
-//            return this.connection;
-//        }
-//    }
     private static Connection c = null;
     public static Connection connect() throws Exception {
 

@@ -12,20 +12,11 @@ public abstract class TVShowDB extends AbstractDB<TVShow>{
     }
 
     public void putTVShow(TVShow show){
-        super.put("FIX SHOW QUERY IN TVSHOWDB");
+        // proof of concept
     }
     public TVShow getTVShow(String mediaID){
-
-//        return super.get(mediaID);
+        // proof of concept
         return new TVShow();
     }
 
-    @Override
-    public String buildPutQuery(){
-        return "PUT FROM TV";
-    }
-    @Override
-    public String buildGetQuery() {
-        return "GET FROM TV";
-    }
 }

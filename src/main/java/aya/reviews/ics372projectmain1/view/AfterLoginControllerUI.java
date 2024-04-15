@@ -1,6 +1,6 @@
 package aya.reviews.ics372projectmain1.view;
 
-import aya.reviews.ics372projectmain1.MainApp;
+import aya.reviews.ics372projectmain1.HelloApplication;
 import aya.reviews.ics372projectmain1.datamodels.Movie;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -49,32 +49,32 @@ public class AfterLoginControllerUI implements Initializable {
 
     private void handleReview(Movie m) throws IOException {
         // yuck
-        MainApp.reviewController.setCurrentMovie(m);
-        MainApp.changeScene("review.fxml");
+        HelloApplication.reviewController.setCurrentMovie(m);
+        HelloApplication.changeScene("review.fxml");
     }
 
     public void nextPage(ActionEvent event) throws IOException {;
-        MainApp.changeScene("scene.fxml");
+        HelloApplication.changeScene("scene.fxml");
     }
 
     public void reviewClick1(ActionEvent actionEvent) throws IOException {
         this.title1.setText("click");
         this.description1.setText("click");
-        MainApp.currentMovie = this.movie1;
+        HelloApplication.currentMovie = this.movie1;
         this.handleReview(this.movie1);
     }
 
     public void reviewClick2(ActionEvent actionEvent) throws IOException {
         this.title2.setText("click");
         this.description2.setText("click");
-        MainApp.currentMovie = this.movie2;
+        HelloApplication.currentMovie = this.movie2;
         this.handleReview(this.movie2);
     }
 
     public void reviewClick3(ActionEvent actionEvent) throws IOException {
         this.title3.setText("click");
         this.description3.setText("click");
-        MainApp.currentMovie = this.movie3;
+        HelloApplication.currentMovie = this.movie3;
         this.handleReview(this.movie3);
     }
 
@@ -132,7 +132,7 @@ public class AfterLoginControllerUI implements Initializable {
         if(requestedMovie.isEmpty()){
             populateMoviesForward();
         }
-        List<Movie> movies = MainApp.getAllMovies();
+        List<Movie> movies = HelloApplication.getAllMovies();
         for(Movie m : movies){
             if ((m.getName()).equalsIgnoreCase((requestedMovie))){
                 this.movie1 = m;
@@ -148,7 +148,7 @@ public class AfterLoginControllerUI implements Initializable {
     }
 
     private void updateMoviesForward(){
-        List<Movie> movies = MainApp.forwardThreeMovies();
+        List<Movie> movies = HelloApplication.forwardThreeMovies();
         if (movies == null){
             return;
         }else{
@@ -158,7 +158,7 @@ public class AfterLoginControllerUI implements Initializable {
         }
     }
     private void updateMoviesBackward(){
-        List<Movie> movies = MainApp.backwardThreeMovies();
+        List<Movie> movies = HelloApplication.backwardThreeMovies();
         if (movies == null){
             return;
         }else{

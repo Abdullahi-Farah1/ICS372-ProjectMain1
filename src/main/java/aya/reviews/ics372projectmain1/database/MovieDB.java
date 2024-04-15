@@ -49,10 +49,4 @@ public class MovieDB extends AbstractDB<Movie>{
         return mediaList;
     }
 
-    public String buildPutQuery(){
-        return "PUT FROM MOVIE";
-    }
-    public String buildGetQuery(){
-        return "GET FROM MOVIE";
-    }
 }
