@@ -13,6 +13,7 @@ import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -93,7 +94,7 @@ public class AfterLoginControllerUI implements Initializable {
         Font f = new Font(size);
         t.setFont(f);
     }
-    public void updateTitles(){
+    public void updateTitles() throws SQLException {
         int titleLength = movie1.getName().length();
         System.out.println("Title: "+movie1.getName());
         int fontSize = computeFontSizeForTitle(titleLength);
@@ -117,17 +118,33 @@ public class AfterLoginControllerUI implements Initializable {
         description3.setText(movie3.getDescription());
     }
     @FXML
-    private void nextPageHandler(ActionEvent actionEvent) {
+    private void nextPageHandler(ActionEvent actionEvent) throws SQLException {
         populateMoviesForward();
     }
     @FXML
-    private void previousPageHandler(ActionEvent actionEvent) {
+    private void previousPageHandler(ActionEvent actionEvent) throws SQLException {
         populateMoviesBackward();
     }
 
     @FXML
-    private void searchHandler(ActionEvent actionEvent) {
-        searchField.setText("Click");
+    private void searchHandler(ActionEvent actionEvent) throws SQLException {
+        String requestedMovie = this.searchField.getText();
+        if(requestedMovie.isEmpty()){
+            populateMoviesForward();
+        }
+        List<Movie> movies = MainApp.getAllMovies();
+        for(Movie m : movies){
+            if ((m.getName()).equalsIgnoreCase((requestedMovie))){
+                this.movie1 = m;
+                this.title1.setText(m.getName());
+                this.description1.setText(m.getDescription());
+                this.title2.setText("");
+                this.description2.setText("");
+                this.title3.setText("");
+                this.description3.setText("");
+                return;
+            }
+        }
     }
 
     private void updateMoviesForward(){
@@ -153,17 +170,21 @@ public class AfterLoginControllerUI implements Initializable {
 
 
 
-    public void populateMoviesForward(){
+    public void populateMoviesForward() throws SQLException {
         this.updateMoviesForward();
         updateTitles();
     }
-    public void populateMoviesBackward(){
+    public void populateMoviesBackward() throws SQLException {
         this.updateMoviesBackward();
         updateTitles();
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        populateMoviesForward();
+        try {
+            populateMoviesForward();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

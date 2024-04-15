@@ -51,7 +51,6 @@ public class ReviewControllerUI implements Initializable {
         review.setReviewID(String.valueOf((reviewText + currentMovie.getName()).hashCode()));
         review.setUserID(String.valueOf(currentUser.getUserID()));
         MainApp.reviewController.submitReview(review);
-        MainApp.changeScene("afterLogin.fxml");
     }
 
     public void cancelButton(ActionEvent event) throws IOException {
