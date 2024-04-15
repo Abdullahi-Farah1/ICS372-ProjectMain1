@@ -13,16 +13,16 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="597.0" prefWidth="928.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aya.reviews.ics372projectmain1.view.AfterLoginControllerUI">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="597.0" prefWidth="1001.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aya.reviews.ics372projectmain1.view.AfterLoginControllerUI">
    <children>
       <BorderPane prefHeight="562.0" prefWidth="928.0" style="-fx-background-color: #002629;">
          <top>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e8b900" height="364.0" layoutY="5.0" stroke="BLACK" strokeType="INSIDE" width="928.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e8b900" height="364.0" layoutY="5.0" stroke="BLACK" strokeType="INSIDE" width="1001.0" />
                   <TilePane layoutY="14.0" prefHeight="383.0" prefWidth="891.0">
                      <children>
-                        <GridPane prefHeight="359.0" prefWidth="926.0">
+                        <GridPane prefHeight="359.0" prefWidth="1004.0">
                           <columnConstraints>
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -34,22 +34,22 @@
                               <RowConstraints maxHeight="234.0" minHeight="0.0" prefHeight="54.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Button fx:id="review1" mnemonicParsing="false" onAction="#reviewClick1" prefHeight="30.0" prefWidth="298.0" text="Review" GridPane.rowIndex="2" />
-                              <Button fx:id="review2" mnemonicParsing="false" onAction="#reviewClick2" prefHeight="30.0" prefWidth="297.0" text="Review" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <Button fx:id="review3" mnemonicParsing="false" onAction="#reviewClick3" prefHeight="30.0" prefWidth="298.0" text="Review" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                              <Text fx:id="title1" strokeType="OUTSIDE" strokeWidth="0.0" text="TITLE" textAlignment="CENTER" wrappingWidth="298.02392578125">
+                              <Button fx:id="review1" mnemonicParsing="false" onAction="#reviewClick1" prefHeight="30.0" prefWidth="284.0" style="-fx-background-color: #87CEEB;" text="Review" GridPane.rowIndex="2" />
+                              <Button fx:id="review2" mnemonicParsing="false" onAction="#reviewClick2" prefHeight="30.0" prefWidth="297.0" style="-fx-background-color: #87CEEB;" text="Review" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Button fx:id="review3" mnemonicParsing="false" onAction="#reviewClick3" prefHeight="30.0" prefWidth="298.0" style="-fx-background-color: #87CEEB;" text="Review" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Text fx:id="title1" strokeType="OUTSIDE" strokeWidth="0.0" text="TITLE" textAlignment="CENTER" wrappingWidth="333.02392578125">
                                  <font>
-                                    <Font size="48.0" />
+                                    <Font size="39.0" />
                                  </font>
                               </Text>
-                              <Text fx:id="title2" strokeType="OUTSIDE" strokeWidth="0.0" text="TITLE" textAlignment="CENTER" wrappingWidth="308.2421875" GridPane.columnIndex="1">
+                              <Text fx:id="title2" strokeType="OUTSIDE" strokeWidth="0.0" text="TITLE" textAlignment="CENTER" wrappingWidth="333.2421875" GridPane.columnIndex="1">
                                  <font>
-                                    <Font size="48.0" />
+                                    <Font size="39.0" />
                                  </font>
                               </Text>
-                              <Text fx:id="title3" strokeType="OUTSIDE" strokeWidth="0.0" text="TITLE" textAlignment="CENTER" wrappingWidth="284.02392578125" GridPane.columnIndex="2">
+                              <Text fx:id="title3" strokeType="OUTSIDE" strokeWidth="0.0" text="TITLE" textAlignment="CENTER" wrappingWidth="332.02392578125" GridPane.columnIndex="2">
                                  <font>
-                                    <Font size="48.0" />
+                                    <Font size="39.0" />
                                  </font>
                               </Text>
                               <TextArea fx:id="description1" prefHeight="200.0" prefWidth="200.0" text="Description&#10;" wrapText="true" GridPane.rowIndex="1">
@@ -60,7 +60,7 @@
                                  <font>
                                     <Font size="18.0" />
                                  </font></TextArea>
-                              <TextArea fx:id="description3" prefHeight="200.0" prefWidth="200.0" text="Description&#10;" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                              <TextArea fx:id="description3" prefHeight="231.0" prefWidth="332.0" text="Description&#10;" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                  <font>
                                     <Font size="18.0" />
                                  </font></TextArea>
@@ -74,17 +74,17 @@
          <bottom>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#485765" height="225.0" layoutY="-25.0" stroke="BLACK" strokeType="INSIDE" width="928.0" />
-                  <Button fx:id="tvshow1" layoutX="807.0" layoutY="143.0" mnemonicParsing="false" onAction="#nextPage" prefHeight="43.0" prefWidth="109.0" style="-fx-background-color: #ffc900;" text="TVShow" />
-                  <Button layoutX="825.0" layoutY="-17.0" mnemonicParsing="false" onAction="#nextPageHandler" prefHeight="35.0" prefWidth="96.0" text="Next Page" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#002629" height="225.0" layoutY="-25.0" stroke="BLACK" strokeType="INSIDE" width="1001.0" />
+                  <Button fx:id="tvshow1" layoutX="873.0" layoutY="137.0" mnemonicParsing="false" onAction="#nextPage" prefHeight="43.0" prefWidth="109.0" style="-fx-background-color: #ffc900;" text="Logout" />
+                  <Button layoutX="894.0" layoutY="-17.0" mnemonicParsing="false" onAction="#nextPageHandler" prefHeight="35.0" prefWidth="96.0" style="-fx-background-color: #87CEEB;" text="Next Page" />
                   <TextField fx:id="searchField" layoutX="6.0" layoutY="-20.0" prefHeight="24.0" prefWidth="218.0" />
-                  <Button fx:id="searchButton" layoutX="224.0" layoutY="-20.0" mnemonicParsing="false" onAction="#searchHandler" text="Search" />
+                  <Button fx:id="searchButton" layoutX="224.0" layoutY="-20.0" mnemonicParsing="false" onAction="#searchHandler" style="-fx-background-color: #87CEEB;" text="Search" />
                   <Text layoutX="14.0" layoutY="167.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="3.0" text="AYA Reviews">
                      <font>
                         <Font size="72.0" />
                      </font>
                   </Text>
-                  <Button fx:id="previousPageButton" layoutX="729.0" layoutY="-17.0" mnemonicParsing="false" onAction="#previousPageHandler" prefHeight="35.0" prefWidth="96.0" text="Previous Page" />
+                  <Button fx:id="previousPageButton" layoutX="790.0" layoutY="-17.0" mnemonicParsing="false" onAction="#previousPageHandler" prefHeight="35.0" prefWidth="96.0" style="-fx-background-color: #87CEEB;" text="Previous Page" />
                </children>
             </AnchorPane>
          </bottom>
