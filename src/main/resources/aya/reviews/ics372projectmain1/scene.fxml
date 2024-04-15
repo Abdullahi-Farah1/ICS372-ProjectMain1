@@ -43,9 +43,7 @@
             <TextField fx:id="username" layoutX="174.0" layoutY="248.0" promptText="Username" />
             <PasswordField fx:id="password" layoutX="174.0" layoutY="297.0" promptText="Password" />
             <Button fx:id="button" layoutX="219.0" layoutY="355.0" mnemonicParsing="false" onAction="#userLogIn" prefHeight="39.0" prefWidth="74.0" style="-fx-background-color: #ffc900;" text="Log in" />
-            <Label layoutX="189.0" layoutY="115.0" textFill="RED" />
-            <Label fx:id="wrongpassword" layoutX="200.0" layoutY="201.0" prefHeight="20.0" prefWidth="185.0" textFill="RED" />
-            <Label fx:id="wrongLogIn" layoutX="183.0" layoutY="221.0" prefHeight="17.0" prefWidth="202.0" textFill="RED" />
+            <Label fx:id="wrongLogIn" layoutX="144.0" layoutY="222.0" prefHeight="24.0" prefWidth="248.0" textFill="RED" />
             <Button fx:id="register1" layoutX="189.0" layoutY="416.0" mnemonicParsing="false" onAction="#registerUser" prefHeight="25.0" prefWidth="135.0" style="-fx-background-color: #ffc900;" text="Register" />
          </children>
       </AnchorPane>

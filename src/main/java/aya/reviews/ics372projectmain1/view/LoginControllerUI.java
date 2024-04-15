@@ -36,15 +36,13 @@ public class LoginControllerUI {
         String enteredPassword = password.getText();
 
         if (enteredUsername.isEmpty() || enteredPassword.isEmpty()) {
-            wrongLogIn.setText("Please enter both username and password.");
+            wrongLogIn.setText("Enter Username and Password or Register.");
         } else {
             boolean res = MainApp.userController.loginUser(enteredUsername, enteredPassword);
             if (res) {
-                wrongLogIn.setText("Login successful");
-//                MainApp m = new MainApp();
                 MainApp.changeScene("afterLogin.fxml");
             } else {
-                wrongLogIn.setText("Incorrect login");
+                wrongLogIn.setText("Incorrect login. Try Again.");
             }
         }
     }
@@ -59,7 +57,7 @@ public class LoginControllerUI {
             // registerUser should probably not implicitly register the user, but i'm lazy
             boolean res = MainApp.userController.registerUser(enteredUsername, enteredPassword);
             if (!res) {
-                wrongLogIn.setText("User already registered. Please log in.");
+                wrongLogIn.setText("Registration Successful. Please log in.");
             }
         }
     }
