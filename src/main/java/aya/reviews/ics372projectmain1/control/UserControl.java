@@ -35,11 +35,11 @@ public class UserControl {
         User user = userDB.getUserByName(username);
         if (user != null){
             // user already exists in DB
+            userDB.putUser(username, password);
             return false;
         }
         else{
 //            User newUser = new User(username, password);
-            userDB.putUser(username, password);
             return true;
         }
     }
