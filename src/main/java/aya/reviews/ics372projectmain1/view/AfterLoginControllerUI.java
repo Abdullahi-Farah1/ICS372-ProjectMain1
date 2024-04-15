@@ -53,7 +53,7 @@ public class AfterLoginControllerUI implements Initializable {
     }
 
     public void nextPage(ActionEvent event) throws IOException {;
-        MainApp.changeScene("tvshow.fxml");
+        MainApp.changeScene("scene.fxml");
     }
 
     public void reviewClick1(ActionEvent actionEvent) throws IOException {

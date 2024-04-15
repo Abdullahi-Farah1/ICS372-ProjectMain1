@@ -65,7 +65,7 @@ public class MainApp extends Application {
         stg = stage;
 
         Parent root = FXMLLoader.load(getClass().getResource("scene.fxml"));
-        Scene scene = new Scene(root, 600, 400);
+        Scene scene = new Scene(root, 1000, 600);
         stage.setTitle("AYA Reviews");
         stage.setScene(scene);
         stage.show();
@@ -73,8 +73,7 @@ public class MainApp extends Application {
 
     public static void changeScene(String fxml) throws IOException {
         Parent pane = FXMLLoader.load(MainApp.class.getResource(fxml));
-        Scene scen = new Scene(pane, 900, 700);
-        stg.setScene(scen);
+        stg.getScene().setRoot(pane);
     }
 
     public static UserControl getUserController() {

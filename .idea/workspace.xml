@@ -6,10 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="f1c99bea-ac04-430d-8517-dfc508172f08" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/database/AbstractDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/database/AbstractDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/database/MovieDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/database/MovieDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/database/ReviewDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/database/ReviewDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/database/UserDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/database/UserDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/database.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/MainApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/view/AfterLoginControllerUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/view/AfterLoginControllerUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aya/reviews/ics372projectmain1/view/TVShowUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/aya/reviews/ics372projectmain1/afterLogin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/aya/reviews/ics372projectmain1/afterLogin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/aya/reviews/ics372projectmain1/review.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/aya/reviews/ics372projectmain1/review.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/aya/reviews/ics372projectmain1/scene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/aya/reviews/ics372projectmain1/scene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/aya/reviews/ics372projectmain1/tvshow.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +113,6 @@
     <configuration name="Movie" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Movie" />
       <module name="ICS372-ProjectMain1.main" />
-      <option name="UNNAMED_CLASS_CONFIGURATION" value="true" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -135,6 +138,8 @@
       <workItem from="1712987904797" duration="1307000" />
       <workItem from="1712989220625" duration="2284000" />
       <workItem from="1712991516914" duration="201000" />
+      <workItem from="1713104898586" duration="354000" />
+      <workItem from="1713198358702" duration="4758000" />
     </task>
     <servers />
   </component>

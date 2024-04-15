@@ -10,11 +10,11 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #002629;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aya.reviews.ics372projectmain1.view.LoginControllerUI">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1001.0" style="-fx-background-color: #002629;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aya.reviews.ics372projectmain1.view.LoginControllerUI">
    <left>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="270.0" fitWidth="274.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="600.0" fitWidth="600.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@AYA%20Reviews.png" />
                </image>
@@ -23,30 +23,30 @@
       </AnchorPane>
    </left>
    <center>
-      <AnchorPane fx:id="register" prefHeight="400.0" prefWidth="358.0" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="register" prefHeight="600.0" prefWidth="616.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="88.0" fitWidth="82.0" layoutX="162.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="88.0" fitWidth="82.0" layoutX="208.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Lock_icon.png" />
                </image>
             </ImageView>
-            <Label layoutX="14.0" layoutY="158.0" text="Username" textFill="#ffc900">
+            <Label layoutX="63.0" layoutY="246.0" text="Username" textFill="#ffc900">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Label layoutX="17.0" layoutY="200.0" text="Password" textFill="#ffc900">
+            <Label layoutX="66.0" layoutY="295.0" text="Password" textFill="#ffc900">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <TextField fx:id="username" layoutX="128.0" layoutY="161.0" promptText="Username" />
-            <PasswordField fx:id="password" layoutX="128.0" layoutY="203.0" promptText="Password" />
-            <Button fx:id="button" layoutX="162.0" layoutY="253.0" mnemonicParsing="false" onAction="#userLogIn" prefHeight="39.0" prefWidth="74.0" style="-fx-background-color: #ffc900;" text="Log in" />
+            <TextField fx:id="username" layoutX="174.0" layoutY="248.0" promptText="Username" />
+            <PasswordField fx:id="password" layoutX="174.0" layoutY="297.0" promptText="Password" />
+            <Button fx:id="button" layoutX="219.0" layoutY="355.0" mnemonicParsing="false" onAction="#userLogIn" prefHeight="39.0" prefWidth="74.0" style="-fx-background-color: #ffc900;" text="Log in" />
             <Label layoutX="189.0" layoutY="115.0" textFill="RED" />
-            <Label fx:id="wrongpassword" layoutX="189.0" layoutY="124.0" textFill="RED" />
-            <Label fx:id="wrongLogIn" layoutX="120.0" layoutY="120.0" textFill="RED" />
-            <Button fx:id="register1" layoutX="136.0" layoutY="315.0" mnemonicParsing="false" onAction="#registerUser" prefHeight="25.0" prefWidth="135.0" style="-fx-background-color: #ffc900;" text="Register" />
+            <Label fx:id="wrongpassword" layoutX="200.0" layoutY="201.0" prefHeight="20.0" prefWidth="185.0" textFill="RED" />
+            <Label fx:id="wrongLogIn" layoutX="183.0" layoutY="221.0" prefHeight="17.0" prefWidth="202.0" textFill="RED" />
+            <Button fx:id="register1" layoutX="189.0" layoutY="416.0" mnemonicParsing="false" onAction="#registerUser" prefHeight="25.0" prefWidth="135.0" style="-fx-background-color: #ffc900;" text="Register" />
          </children>
       </AnchorPane>
    </center>
