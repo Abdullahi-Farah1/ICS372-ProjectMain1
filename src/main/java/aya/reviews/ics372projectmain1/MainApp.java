@@ -28,23 +28,25 @@ public class MainApp extends Application {
     private static int pointer = 0;
     public static List<Movie> forwardThreeMovies(){
         try {
+            System.out.println(pointer);
             List<Movie> movies = movieCache.subList(pointer, pointer + 3);
-            pointer += 3;
+            pointer += 1;
             return movies;
         }catch(IndexOutOfBoundsException e){
             System.out.println("No more movies in cache");
-            pointer -= 3;
+            pointer -= 1;
             return null;
         }
     }
     public static List<Movie> backwardThreeMovies(){
         try {
+            System.out.println(pointer);
             List<Movie> movies = movieCache.subList(pointer, pointer + 3);
-            pointer -= 3;
+            pointer -= 1;
             return movies;
         }catch(IndexOutOfBoundsException e){
             System.out.println("No more movies in cache");
-            pointer += 3;
+            pointer += 1;
             return null;
         }
     }
@@ -54,6 +56,7 @@ public class MainApp extends Application {
         String id = movie.getMediaID();
         return reviewController.getMediaReviews(id);
     }
+
 
     @Override
     public void start(Stage stage) throws IOException, SQLException {
