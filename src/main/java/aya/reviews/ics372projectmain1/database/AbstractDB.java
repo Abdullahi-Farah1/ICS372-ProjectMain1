@@ -11,11 +11,10 @@ public abstract class AbstractDB<T> implements DBOperations<T> {
      * */
 
     private static final String URL = "jdbc:sqlite:database.sqlite";
-//    private Connection connection;
+
     private void insertDB(String query){
         System.out.println("Putting to DB using query: " + query);
         try {
-//            Connection connection = DriverManager.getConnection(URL);
             Statement statement = connect().createStatement();
             statement.executeUpdate(query);
 //            connection.close();
