@@ -16,7 +16,6 @@ public class ReviewDB extends AbstractDB<Review>{
     }
 
     public void putReview(Review review){
-        System.out.println(review);
         String userID = review.getUserID();
         String reviewID = review.getReviewID();
         String mediaID = review.getMediaID();

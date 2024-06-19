@@ -70,11 +70,8 @@ public class ReviewControllerUI implements Initializable {
             Review curReview = this.currentReviewCache.get(this.reviewPointer);
             this.discoverReviewText.setText(curReview.getReviewDescription());
             String userID = curReview.getUserID();
-            System.out.println("userID: " + userID);
             User user = HelloApplication.getUserController().getUserByID(userID);
-            System.out.println("user: " + user);
             String username = user.getDisplayName();
-            System.out.println("username: " + username);
             this.reviewByUser.setText("Review by user " + username);
         }catch (IndexOutOfBoundsException e){
             return;

@@ -96,10 +96,7 @@ public class AfterLoginControllerUI implements Initializable {
     }
     public void updateTitles() throws SQLException {
         int titleLength = movie1.getName().length();
-        System.out.println("Title: "+movie1.getName());
         int fontSize = computeFontSizeForTitle(titleLength);
-        System.out.println("len: " + titleLength);
-        System.out.println("Size: " + fontSize);
         setFont(fontSize, title1);
         title1.setText(movie1.getName());
 
